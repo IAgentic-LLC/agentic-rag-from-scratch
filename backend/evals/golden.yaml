@@ -1,0 +1,92 @@
+# Golden questions. expect: chunk ids that must be found. facts: what a correct answer must say.
+# answerable: false means the right behaviour is to say the docs don't cover it.
+- q: "Can a customer return Air Glide sneakers bought in last Friday's drop after 10 days?"
+  expect: [drop-day-runbook#drop-calendar, refund-policy#limited-drops, refund-policy#eu-customers]
+  facts: "The Air Glide restock (2026-10-16) was a limited drop. No for US and UK customers (7-day drop window, PC-12). Yes for EU customers (14-day legal right)."
+  answerable: true
+  hops: 2
+- q: "A customer sees error E-4012 at checkout. What do I tell them?"
+  expect: [checkout-errors#e-4012-payment-hold]
+  facts: "Bank needs 3-D Secure approval in the banking app within 10 minutes; the pair is held; not charged yet."
+  answerable: true
+- q: "What does E-4029 mean?"
+  expect: [checkout-errors#e-4029-too-many-attempts]
+  facts: "Too many checkout attempts (5 per minute); wait 60 seconds and try once."
+  answerable: true
+- q: "What's the return window for normal, non-drop items?"
+  expect: [refund-policy#standard-returns]
+  facts: "30 days from delivery, unworn, original box, tags attached."
+  answerable: true
+- q: "Why did we shorten the return window for drops?"
+  expect: [inc-2047-postmortem#what-happened, inc-2047-postmortem#actions]
+  facts: "After INC-2047: 41% of Air Glide returns came from 12 reseller accounts; PC-12 set 7 days."
+  answerable: true
+  hops: 2
+- q: "When did PC-12 take effect?"
+  expect: [refund-policy#limited-drops]
+  facts: "2026-04-01."
+  answerable: true
+- q: "A German customer bought a drop pair 12 days ago. Can they still return it?"
+  expect: [refund-policy#eu-customers]
+  facts: "Yes, EU customers have 14 days even for drops."
+  answerable: true
+- q: "How many checkout pods do we run before a drop?"
+  expect: [drop-day-runbook#t-60-minutes]
+  facts: "40 pods, scaled at T-60 minutes."
+  answerable: true
+- q: "What should on-call do if checkout errors stay high during a drop?"
+  expect: [drop-day-runbook#during-the-drop]
+  facts: "Above 2% for 3 minutes: page payments on-call and post in #drop-war-room."
+  answerable: true
+- q: "How fast must we respond to a SEV-1?"
+  expect: [on-call#severity-levels]
+  facts: "Within 5 minutes."
+  answerable: true
+- q: "When do Drop Club members get in?"
+  expect: [drop-club#benefits]
+  facts: "09:50, 10 minutes before the public release."
+  answerable: true
+- q: "Do customers keep their points if they return an order?"
+  expect: [drop-club#points-on-returns]
+  facts: "No, points are removed when the refund is issued."
+  answerable: true
+- q: "How long does standard shipping take to the US?"
+  expect: [shipping-policy#delivery-times]
+  facts: "2 to 4 business days."
+  answerable: true
+- q: "Can a customer change the delivery address on a drop order?"
+  expect: [shipping-policy#drop-orders]
+  facts: "No, not after the drop order is placed."
+  answerable: true
+- q: "What caused the 503 errors in the Volt Runner drop?"
+  expect: [inc-2051-postmortem#what-happened]
+  facts: "Bots retried checkout in tight loops at 3,000 req/s; the queue overflowed; 18% of requests failed for 11 minutes."
+  answerable: true
+- q: "What rate limit do partner API keys have?"
+  expect: [api-rate-limits#limits]
+  facts: "100 requests per minute, token bucket, burst of 20."
+  answerable: true
+- q: "My customer's Volt Runners arrived broken after 2 months. Can they return them?"
+  expect: [refund-policy#exceptions]
+  facts: "Yes, defective items can be returned within 90 days regardless of drop status."
+  answerable: true
+- q: "Can customers return gift cards?"
+  expect: []
+  facts: "Not covered by the docs."
+  answerable: false
+- q: "Do we ship to Japan?"
+  expect: [shipping-policy#where-we-ship]
+  facts: "No, only EU, UK and US."
+  answerable: true
+- q: "What's our refund policy for orders paid with crypto?"
+  expect: []
+  facts: "Not covered by the docs."
+  answerable: false
+- q: "Who is the CEO of Dropline?"
+  expect: []
+  facts: "Not covered by the docs."
+  answerable: false
+- q: "How long is the warranty on Dropline sneakers?"
+  expect: []
+  facts: "Not covered by the docs (only the 90-day defective return rule exists)."
+  answerable: false

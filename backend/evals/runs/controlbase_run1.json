@@ -1,0 +1,626 @@
+{
+ "plain_vector_k6": {
+  "correct": 1.0,
+  "hallucinated": 0.0,
+  "avg_seconds": 4.279090909090909,
+  "avg_cost": 0.0015231477272727272,
+  "rows": [
+   {
+    "q": "Can a customer return Air Glide sneakers bought in last Friday's drop after 10 days?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 7.48,
+    "cost": 0.0033667499999999995,
+    "outcome": "answered",
+    "answer": "Generally, **no**, unless the customer is located in the EU:\n\n* **Standard policy:** Under policy change PC-12, limited drops have a shortened return window of **7 days** from delivery, so a return after 10 days would not be accepted [1, 2]. \n* **EU exception:** If the customer has an EU delivery address, they retain a legal **14-day** right of withdrawal, allowing them to return the sneakers within 10 days [5].",
+    "queries": [
+     "Can a customer return Air Glide sneakers bought in last Friday's drop after 10 days?"
+    ],
+    "retrieved": [
+     "inc-2047-postmortem#actions",
+     "refund-policy#limited-drops",
+     "inc-2047-postmortem#what-happened",
+     "inc-2047-postmortem#impact",
+     "refund-policy#eu-customers",
+     "drop-day-runbook#drop-calendar"
+    ],
+    "kept": [
+     "inc-2047-postmortem#actions",
+     "refund-policy#limited-drops",
+     "inc-2047-postmortem#what-happened",
+     "inc-2047-postmortem#impact",
+     "refund-policy#eu-customers",
+     "drop-day-runbook#drop-calendar"
+    ]
+   },
+   {
+    "q": "A customer sees error E-4012 at checkout. What do I tell them?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 4.47,
+    "cost": 0.00170475,
+    "outcome": "answered",
+    "answer": "Tell the customer: \"Your bank is asking you to confirm this payment. Open your banking app and approve it within 10 minutes; your pair is reserved until then.\" [1] \n\nYou can also note that they have not been charged yet and won't be until they approve the payment [1].",
+    "queries": [
+     "A customer sees error E-4012 at checkout. What do I tell them?"
+    ],
+    "retrieved": [
+     "checkout-errors#e-4012-payment-hold",
+     "checkout-errors#e-4029-too-many-attempts",
+     "checkout-errors#e-5031-inventory-timeout",
+     "inc-2051-postmortem#fixes",
+     "checkout-errors#overview",
+     "checkout-errors#e-5090-unknown-error"
+    ],
+    "kept": [
+     "checkout-errors#e-4012-payment-hold",
+     "checkout-errors#e-4029-too-many-attempts",
+     "checkout-errors#e-5031-inventory-timeout",
+     "inc-2051-postmortem#fixes",
+     "checkout-errors#overview",
+     "checkout-errors#e-5090-unknown-error"
+    ]
+   },
+   {
+    "q": "What does E-4029 mean?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 4.07,
+    "cost": 0.0012645,
+    "outcome": "answered",
+    "answer": "Error **E-4029** means \"Too many attempts\" [1]. It indicates that the checkout rate limiter blocked the request after 5 checkout attempts were made within one minute [1, 2].",
+    "queries": [
+     "What does E-4029 mean?"
+    ],
+    "retrieved": [
+     "checkout-errors#e-4029-too-many-attempts",
+     "inc-2051-postmortem#fixes",
+     "checkout-errors#e-4012-payment-hold",
+     "checkout-errors#e-5031-inventory-timeout",
+     "checkout-errors#e-5090-unknown-error",
+     "refund-policy#overview"
+    ],
+    "kept": [
+     "checkout-errors#e-4029-too-many-attempts",
+     "inc-2051-postmortem#fixes",
+     "checkout-errors#e-4012-payment-hold",
+     "checkout-errors#e-5031-inventory-timeout",
+     "checkout-errors#e-5090-unknown-error",
+     "refund-policy#overview"
+    ]
+   },
+   {
+    "q": "What's the return window for normal, non-drop items?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 4.04,
+    "cost": 0.0013904999999999998,
+    "outcome": "answered",
+    "answer": "The return window for normal, non-drop items (regular catalogue items) is 30 days from delivery [5].",
+    "queries": [
+     "What's the return window for normal, non-drop items?"
+    ],
+    "retrieved": [
+     "refund-policy#limited-drops",
+     "refund-policy#exceptions",
+     "refund-policy#eu-customers",
+     "refund-policy#uk-and-us-customers",
+     "refund-policy#standard-returns",
+     "refund-policy#overview"
+    ],
+    "kept": [
+     "refund-policy#limited-drops",
+     "refund-policy#exceptions",
+     "refund-policy#eu-customers",
+     "refund-policy#uk-and-us-customers",
+     "refund-policy#standard-returns",
+     "refund-policy#overview"
+    ]
+   },
+   {
+    "q": "Why did we shorten the return window for drops?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 6.09,
+    "cost": 0.0025605000000000003,
+    "outcome": "answered",
+    "answer": "The return window for limited drops was shortened to 7 days (policy change PC-12) following incident INC-2047 [1, 2]. \n\nDuring that incident (the Air Glide drop), resellers bought pairs in bulk and returned unsold pairs near the end of the standard 30-day window\u2014with 41% of returns coming from just 12 reseller-linked accounts [6]. This resulted in genuine customers missing out and left returned pairs unable to be resold as new stock for the drop [5].",
+    "queries": [
+     "Why did we shorten the return window for drops?"
+    ],
+    "retrieved": [
+     "refund-policy#limited-drops",
+     "inc-2047-postmortem#actions",
+     "refund-policy#exceptions",
+     "refund-policy#eu-customers",
+     "inc-2047-postmortem#impact",
+     "inc-2047-postmortem#what-happened"
+    ],
+    "kept": [
+     "refund-policy#limited-drops",
+     "inc-2047-postmortem#actions",
+     "refund-policy#exceptions",
+     "refund-policy#eu-customers",
+     "inc-2047-postmortem#impact",
+     "inc-2047-postmortem#what-happened"
+    ]
+   },
+   {
+    "q": "When did PC-12 take effect?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 3.08,
+    "cost": 0.001281,
+    "outcome": "answered",
+    "answer": "PC-12 took effect on 2026-04-01 [2], [3].",
+    "queries": [
+     "When did PC-12 take effect?"
+    ],
+    "retrieved": [
+     "glossary#terms",
+     "inc-2047-postmortem#actions",
+     "refund-policy#limited-drops",
+     "refund-policy#overview",
+     "shipping-policy#overview",
+     "checkout-errors#e-4012-payment-hold"
+    ],
+    "kept": [
+     "glossary#terms",
+     "inc-2047-postmortem#actions",
+     "refund-policy#limited-drops",
+     "refund-policy#overview",
+     "shipping-policy#overview",
+     "checkout-errors#e-4012-payment-hold"
+    ]
+   },
+   {
+    "q": "A German customer bought a drop pair 12 days ago. Can they still return it?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 4.83,
+    "cost": 0.0016005,
+    "outcome": "answered",
+    "answer": "Yes, they can still return it. Germany is an EU country, and customers with an EU delivery address maintain a legal 14-day right of withdrawal\u2014even for limited drops\u2014making their effective return window 14 days rather than 7 [1]. Since only 12 days have passed, they are still within the return window [1].",
+    "queries": [
+     "A German customer bought a drop pair 12 days ago. Can they still return it?"
+    ],
+    "retrieved": [
+     "refund-policy#eu-customers",
+     "refund-policy#limited-drops",
+     "refund-policy#uk-and-us-customers",
+     "refund-policy#exceptions",
+     "inc-2047-postmortem#actions",
+     "drop-club#points-on-returns"
+    ],
+    "kept": [
+     "refund-policy#eu-customers",
+     "refund-policy#limited-drops",
+     "refund-policy#uk-and-us-customers",
+     "refund-policy#exceptions",
+     "inc-2047-postmortem#actions",
+     "drop-club#points-on-returns"
+    ]
+   },
+   {
+    "q": "How many checkout pods do we run before a drop?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 3.34,
+    "cost": 0.0011385000000000002,
+    "outcome": "answered",
+    "answer": "Before a drop, the checkout service is scaled to 40 pods [2], [3].",
+    "queries": [
+     "How many checkout pods do we run before a drop?"
+    ],
+    "retrieved": [
+     "drop-day-runbook#after-the-drop",
+     "drop-day-runbook#t-60-minutes",
+     "inc-2051-postmortem#fixes",
+     "drop-day-runbook#during-the-drop",
+     "drop-day-runbook#t-10-minutes",
+     "inc-2051-postmortem#what-happened"
+    ],
+    "kept": [
+     "drop-day-runbook#after-the-drop",
+     "drop-day-runbook#t-60-minutes",
+     "inc-2051-postmortem#fixes",
+     "drop-day-runbook#during-the-drop",
+     "drop-day-runbook#t-10-minutes",
+     "inc-2051-postmortem#what-happened"
+    ]
+   },
+   {
+    "q": "What should on-call do if checkout errors stay high during a drop?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 5.3,
+    "cost": 0.00197775,
+    "outcome": "answered",
+    "answer": "If the checkout error rate stays above 2% for 3 minutes during a drop, on-call should page the payments on-call and post in `#drop-war-room` [1]. Additionally, inventory counts should not be changed manually during a drop [1].",
+    "queries": [
+     "What should on-call do if checkout errors stay high during a drop?"
+    ],
+    "retrieved": [
+     "drop-day-runbook#during-the-drop",
+     "drop-day-runbook#after-the-drop",
+     "inc-2051-postmortem#fixes",
+     "drop-day-runbook#t-10-minutes",
+     "inc-2051-postmortem#what-happened",
+     "drop-day-runbook#t-60-minutes"
+    ],
+    "kept": [
+     "drop-day-runbook#during-the-drop",
+     "drop-day-runbook#after-the-drop",
+     "inc-2051-postmortem#fixes",
+     "drop-day-runbook#t-10-minutes",
+     "inc-2051-postmortem#what-happened",
+     "drop-day-runbook#t-60-minutes"
+    ]
+   },
+   {
+    "q": "How fast must we respond to a SEV-1?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 3.46,
+    "cost": 0.0007875,
+    "outcome": "answered",
+    "answer": "You must respond to a SEV-1 within 5 minutes [1].",
+    "queries": [
+     "How fast must we respond to a SEV-1?"
+    ],
+    "retrieved": [
+     "on-call#severity-levels",
+     "inc-2051-postmortem#overview",
+     "on-call#escalation",
+     "inc-2047-postmortem#overview",
+     "on-call#rotation",
+     "drop-day-runbook#overview"
+    ],
+    "kept": [
+     "on-call#severity-levels",
+     "inc-2051-postmortem#overview",
+     "on-call#escalation",
+     "inc-2047-postmortem#overview",
+     "on-call#rotation",
+     "drop-day-runbook#overview"
+    ]
+   },
+   {
+    "q": "When do Drop Club members get in?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 3.25,
+    "cost": 0.0012862499999999999,
+    "outcome": "answered",
+    "answer": "Drop Club members get early access at 09:50, which is 10 minutes before the public release at 10:00 [1], [2].",
+    "queries": [
+     "When do Drop Club members get in?"
+    ],
+    "retrieved": [
+     "drop-club#benefits",
+     "drop-day-runbook#t-10-minutes",
+     "drop-club#membership",
+     "glossary#terms",
+     "shipping-policy#drop-orders",
+     "drop-club#points-on-returns"
+    ],
+    "kept": [
+     "drop-club#benefits",
+     "drop-day-runbook#t-10-minutes",
+     "drop-club#membership",
+     "glossary#terms",
+     "shipping-policy#drop-orders",
+     "drop-club#points-on-returns"
+    ]
+   },
+   {
+    "q": "Do customers keep their points if they return an order?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 3.59,
+    "cost": 0.0011557499999999999,
+    "outcome": "answered",
+    "answer": "No, customers do not keep their points. Points earned on a returned order are removed when the refund is issued [1].",
+    "queries": [
+     "Do customers keep their points if they return an order?"
+    ],
+    "retrieved": [
+     "drop-club#points-on-returns",
+     "drop-club#membership",
+     "refund-policy#exceptions",
+     "refund-policy#limited-drops",
+     "drop-club#benefits",
+     "refund-policy#uk-and-us-customers"
+    ],
+    "kept": [
+     "drop-club#points-on-returns",
+     "drop-club#membership",
+     "refund-policy#exceptions",
+     "refund-policy#limited-drops",
+     "drop-club#benefits",
+     "refund-policy#uk-and-us-customers"
+    ]
+   },
+   {
+    "q": "How long does standard shipping take to the US?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 3.84,
+    "cost": 0.001047,
+    "outcome": "answered",
+    "answer": "Standard shipping to the US takes 2 to 4 business days [1].",
+    "queries": [
+     "How long does standard shipping take to the US?"
+    ],
+    "retrieved": [
+     "shipping-policy#delivery-times",
+     "shipping-policy#drop-orders",
+     "refund-policy#uk-and-us-customers",
+     "shipping-policy#overview",
+     "shipping-policy#where-we-ship",
+     "refund-policy#standard-returns"
+    ],
+    "kept": [
+     "shipping-policy#delivery-times",
+     "shipping-policy#drop-orders",
+     "refund-policy#uk-and-us-customers",
+     "shipping-policy#overview",
+     "shipping-policy#where-we-ship",
+     "refund-policy#standard-returns"
+    ]
+   },
+   {
+    "q": "Can a customer change the delivery address on a drop order?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 3.81,
+    "cost": 0.000906,
+    "outcome": "answered",
+    "answer": "No, customers cannot change the delivery address after a drop order has been placed [1].",
+    "queries": [
+     "Can a customer change the delivery address on a drop order?"
+    ],
+    "retrieved": [
+     "shipping-policy#drop-orders",
+     "drop-club#points-on-returns",
+     "refund-policy#limited-drops",
+     "refund-policy#exceptions",
+     "refund-policy#overview",
+     "refund-policy#uk-and-us-customers"
+    ],
+    "kept": [
+     "shipping-policy#drop-orders",
+     "drop-club#points-on-returns",
+     "refund-policy#limited-drops",
+     "refund-policy#exceptions",
+     "refund-policy#overview",
+     "refund-policy#uk-and-us-customers"
+    ]
+   },
+   {
+    "q": "What caused the 503 errors in the Volt Runner drop?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 3.85,
+    "cost": 0.00169125,
+    "outcome": "answered",
+    "answer": "The 503 errors were caused by traffic peaking at 3,000 requests per second combined with bots retrying checkout in tight loops, which caused the checkout queue to overflow [1].",
+    "queries": [
+     "What caused the 503 errors in the Volt Runner drop?"
+    ],
+    "retrieved": [
+     "inc-2051-postmortem#what-happened",
+     "inc-2051-postmortem#fixes",
+     "inc-2051-postmortem#overview",
+     "inc-2047-postmortem#what-happened",
+     "drop-day-runbook#overview",
+     "drop-day-runbook#t-10-minutes"
+    ],
+    "kept": [
+     "inc-2051-postmortem#what-happened",
+     "inc-2051-postmortem#fixes",
+     "inc-2051-postmortem#overview",
+     "inc-2047-postmortem#what-happened",
+     "drop-day-runbook#overview",
+     "drop-day-runbook#t-10-minutes"
+    ]
+   },
+   {
+    "q": "What rate limit do partner API keys have?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 3.97,
+    "cost": 0.0013387499999999999,
+    "outcome": "answered",
+    "answer": "Partner API keys have a rate limit of 100 requests per minute, using a token bucket that refills at 100 tokens per minute with a burst capacity of 20 [1].",
+    "queries": [
+     "What rate limit do partner API keys have?"
+    ],
+    "retrieved": [
+     "api-rate-limits#limits",
+     "api-rate-limits#when-a-limit-is-hit",
+     "api-rate-limits#overview",
+     "inc-2051-postmortem#what-happened",
+     "inc-2051-postmortem#fixes",
+     "inc-2047-postmortem#actions"
+    ],
+    "kept": [
+     "api-rate-limits#limits",
+     "api-rate-limits#when-a-limit-is-hit",
+     "api-rate-limits#overview",
+     "inc-2051-postmortem#what-happened",
+     "inc-2051-postmortem#fixes",
+     "inc-2047-postmortem#actions"
+    ]
+   },
+   {
+    "q": "My customer's Volt Runners arrived broken after 2 months. Can they return them?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 5.94,
+    "cost": 0.00202275,
+    "outcome": "answered",
+    "answer": "Yes, they can return them. Defective items can be returned within 90 days regardless of their drop status, so a return at 2 months falls within this window [2].",
+    "queries": [
+     "My customer's Volt Runners arrived broken after 2 months. Can they return them?"
+    ],
+    "retrieved": [
+     "inc-2047-postmortem#actions",
+     "refund-policy#exceptions",
+     "inc-2047-postmortem#impact",
+     "refund-policy#limited-drops",
+     "inc-2047-postmortem#what-happened",
+     "refund-policy#eu-customers"
+    ],
+    "kept": [
+     "inc-2047-postmortem#actions",
+     "refund-policy#exceptions",
+     "inc-2047-postmortem#impact",
+     "refund-policy#limited-drops",
+     "inc-2047-postmortem#what-happened",
+     "refund-policy#eu-customers"
+    ]
+   },
+   {
+    "q": "Can customers return gift cards?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 3.25,
+    "cost": 0.0013582499999999999,
+    "outcome": "answered",
+    "answer": "Based on the provided context, there is no information regarding whether customers can return gift cards.",
+    "queries": [
+     "Can customers return gift cards?"
+    ],
+    "retrieved": [
+     "refund-policy#standard-returns",
+     "refund-policy#eu-customers",
+     "refund-policy#uk-and-us-customers",
+     "refund-policy#exceptions",
+     "refund-policy#limited-drops",
+     "refund-policy#overview"
+    ],
+    "kept": [
+     "refund-policy#standard-returns",
+     "refund-policy#eu-customers",
+     "refund-policy#uk-and-us-customers",
+     "refund-policy#exceptions",
+     "refund-policy#limited-drops",
+     "refund-policy#overview"
+    ]
+   },
+   {
+    "q": "Do we ship to Japan?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 3.43,
+    "cost": 0.000828,
+    "outcome": "answered",
+    "answer": "No, shipping is only available to EU countries, the UK, and the US; shipping to other countries is not offered yet [1].",
+    "queries": [
+     "Do we ship to Japan?"
+    ],
+    "retrieved": [
+     "shipping-policy#where-we-ship",
+     "shipping-policy#delivery-times",
+     "shipping-policy#overview",
+     "shipping-policy#drop-orders",
+     "refund-policy#eu-customers",
+     "refund-policy#uk-and-us-customers"
+    ],
+    "kept": [
+     "shipping-policy#where-we-ship",
+     "shipping-policy#delivery-times",
+     "shipping-policy#overview",
+     "shipping-policy#drop-orders",
+     "refund-policy#eu-customers",
+     "refund-policy#uk-and-us-customers"
+    ]
+   },
+   {
+    "q": "What's our refund policy for orders paid with crypto?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 4.73,
+    "cost": 0.00147525,
+    "outcome": "answered",
+    "answer": "Based on the provided context, there is no information regarding the refund policy for orders paid with crypto.",
+    "queries": [
+     "What's our refund policy for orders paid with crypto?"
+    ],
+    "retrieved": [
+     "refund-policy#limited-drops",
+     "refund-policy#eu-customers",
+     "refund-policy#overview",
+     "refund-policy#uk-and-us-customers",
+     "refund-policy#exceptions",
+     "drop-club#points-on-returns"
+    ],
+    "kept": [
+     "refund-policy#limited-drops",
+     "refund-policy#eu-customers",
+     "refund-policy#overview",
+     "refund-policy#uk-and-us-customers",
+     "refund-policy#exceptions",
+     "drop-club#points-on-returns"
+    ]
+   },
+   {
+    "q": "Who is the CEO of Dropline?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 3.71,
+    "cost": 0.001335,
+    "outcome": "answered",
+    "answer": "Based on the provided context, there is no information about who the CEO of Dropline is.",
+    "queries": [
+     "Who is the CEO of Dropline?"
+    ],
+    "retrieved": [
+     "glossary#terms",
+     "refund-policy#overview",
+     "shipping-policy#drop-orders",
+     "drop-club#overview",
+     "drop-club#membership",
+     "drop-day-runbook#t-10-minutes"
+    ],
+    "kept": [
+     "glossary#terms",
+     "refund-policy#overview",
+     "shipping-policy#drop-orders",
+     "drop-club#overview",
+     "drop-club#membership",
+     "drop-day-runbook#t-10-minutes"
+    ]
+   },
+   {
+    "q": "How long is the warranty on Dropline sneakers?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 4.61,
+    "cost": 0.00199275,
+    "outcome": "answered",
+    "answer": "The provided context does not explicitly mention a \"warranty\"; however, it notes that defective items can be returned within 90 days regardless of drop status [3].",
+    "queries": [
+     "How long is the warranty on Dropline sneakers?"
+    ],
+    "retrieved": [
+     "glossary#terms",
+     "refund-policy#eu-customers",
+     "refund-policy#exceptions",
+     "refund-policy#limited-drops",
+     "refund-policy#overview",
+     "refund-policy#standard-returns"
+    ],
+    "kept": [
+     "glossary#terms",
+     "refund-policy#eu-customers",
+     "refund-policy#exceptions",
+     "refund-policy#limited-drops",
+     "refund-policy#overview",
+     "refund-policy#standard-returns"
+    ]
+   }
+  ]
+ }
+}
