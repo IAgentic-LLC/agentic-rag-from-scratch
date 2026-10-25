@@ -1,0 +1,1525 @@
+{
+ "base_none": {
+  "correct": 0.5909090909090909,
+  "hallucinated": 0.1590909090909091,
+  "avg_seconds": 4.752272727272727,
+  "avg_cost": 0.0016653579545454545,
+  "rows": [
+   {
+    "q": "A customer sees error E-4012 at checkout. What do I tell them?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 5.42,
+    "cost": 0.0015547499999999997,
+    "outcome": "answered",
+    "answer": "Tell the customer: \"Your bank is asking you to confirm this payment. Open your banking app and approve it within 10 minutes; your pair is reserved until then.\" [1]. \n\nYou can also note that they have not been charged yet and will not be charged until the payment is approved [1].",
+    "queries": [
+     "A customer sees error E-4012 at checkout. What do I tell them?"
+    ],
+    "retrieved": [
+     "checkout-errors#e-4012-payment-hold",
+     "checkout-errors#e-4029-too-many-attempts",
+     "checkout-errors#e-5031-inventory-timeout",
+     "inc-2051-postmortem#fixes",
+     "checkout-errors#overview",
+     "checkout-errors#e-5090-unknown-error"
+    ],
+    "kept": [
+     "checkout-errors#e-4012-payment-hold",
+     "checkout-errors#e-4029-too-many-attempts",
+     "checkout-errors#e-5031-inventory-timeout",
+     "inc-2051-postmortem#fixes",
+     "checkout-errors#overview",
+     "checkout-errors#e-5090-unknown-error"
+    ],
+    "id": "o02",
+    "expect": [
+     "checkout-errors#e-4012-payment-hold"
+    ],
+    "split": "test",
+    "tag": "regression"
+   },
+   {
+    "q": "Why did we shorten the return window for drops?",
+    "correct": false,
+    "hallucinated": false,
+    "seconds": 4.92,
+    "cost": 0.0015315000000000003,
+    "outcome": "answered",
+    "answer": "The return window for drops was shortened (introduced under policy change PC-12) in response to incident INC-2047, which involved a reseller return wave following the Air Glide drop [1], [2].",
+    "queries": [
+     "Why did we shorten the return window for drops?"
+    ],
+    "retrieved": [
+     "refund-policy#limited-drops",
+     "inc-2047-postmortem#actions",
+     "refund-policy-2025#limited-drops",
+     "exchanges-and-sizing#exceptions",
+     "holiday-returns-and-hours#holiday-returns",
+     "drop-calendar-h2-2026#rules-for-these-drops"
+    ],
+    "kept": [
+     "refund-policy#limited-drops",
+     "inc-2047-postmortem#actions",
+     "refund-policy-2025#limited-drops",
+     "exchanges-and-sizing#exceptions",
+     "holiday-returns-and-hours#holiday-returns",
+     "drop-calendar-h2-2026#rules-for-these-drops"
+    ],
+    "id": "o05",
+    "expect": [
+     "inc-2047-postmortem#what-happened",
+     "inc-2047-postmortem#actions"
+    ],
+    "split": "test",
+    "tag": "regression"
+   },
+   {
+    "q": "How fast must we respond to a SEV-1?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 4.03,
+    "cost": 0.0014925000000000001,
+    "outcome": "answered",
+    "answer": "You must respond to a SEV-1 within 5 minutes [2].",
+    "queries": [
+     "How fast must we respond to a SEV-1?"
+    ],
+    "retrieved": [
+     "status-and-incident-comms#sev-1-updates",
+     "on-call#severity-levels",
+     "status-and-incident-comms#severity-levels",
+     "status-and-incident-comms#postmortems",
+     "holiday-returns-and-hours#closed-days",
+     "inc-2085-postmortem#overview"
+    ],
+    "kept": [
+     "status-and-incident-comms#sev-1-updates",
+     "on-call#severity-levels",
+     "status-and-incident-comms#severity-levels",
+     "status-and-incident-comms#postmortems",
+     "holiday-returns-and-hours#closed-days",
+     "inc-2085-postmortem#overview"
+    ],
+    "id": "o10",
+    "expect": [
+     "on-call#severity-levels"
+    ],
+    "split": "test",
+    "tag": "regression"
+   },
+   {
+    "q": "My customer's Volt Runners arrived broken after 2 months. Can they return them?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 5.0,
+    "cost": 0.00206925,
+    "outcome": "answered",
+    "answer": "Yes, they can return them. Defective items can be returned for a refund within 90 days of delivery, regardless of whether the item was a limited drop [1, 5]. Since 2 months is within this 90-day window, they are eligible for a return [1, 5].",
+    "queries": [
+     "My customer's Volt Runners arrived broken after 2 months. Can they return them?"
+    ],
+    "retrieved": [
+     "repairs-and-defects#returns-for-defects",
+     "product-care#returns",
+     "refund-policy#limited-drops",
+     "inc-2047-postmortem#actions",
+     "refund-policy#exceptions",
+     "holiday-returns-and-hours#holiday-returns"
+    ],
+    "kept": [
+     "repairs-and-defects#returns-for-defects",
+     "product-care#returns",
+     "refund-policy#limited-drops",
+     "inc-2047-postmortem#actions",
+     "refund-policy#exceptions",
+     "holiday-returns-and-hours#holiday-returns"
+    ],
+    "id": "o17",
+    "expect": [
+     "refund-policy#exceptions"
+    ],
+    "split": "test",
+    "tag": "regression"
+   },
+   {
+    "q": "Can customers return gift cards?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 4.2,
+    "cost": 0.0016305,
+    "outcome": "answered",
+    "answer": "Based on the provided context, there is no information mentioning whether gift cards can be returned.",
+    "queries": [
+     "Can customers return gift cards?"
+    ],
+    "retrieved": [
+     "refund-policy#standard-returns",
+     "holiday-returns-and-hours#holiday-returns",
+     "refund-policy#eu-customers",
+     "repairs-and-defects#returns-for-defects",
+     "refund-policy-2025#eu-customers",
+     "refund-policy#uk-and-us-customers"
+    ],
+    "kept": [
+     "refund-policy#standard-returns",
+     "holiday-returns-and-hours#holiday-returns",
+     "refund-policy#eu-customers",
+     "repairs-and-defects#returns-for-defects",
+     "refund-policy-2025#eu-customers",
+     "refund-policy#uk-and-us-customers"
+    ],
+    "id": "o18",
+    "expect": [],
+    "split": "test",
+    "tag": "regression"
+   },
+   {
+    "q": "How long is the warranty on Dropline sneakers?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 6.47,
+    "cost": 0.0021697500000000002,
+    "outcome": "answered",
+    "answer": "Based on the provided context, there is no mention of how long the warranty lasts on Dropline sneakers. The text only details which defects are covered [1], the return windows for refunds [5, 6], and that covered repairs take 10 to 15 business days [4].",
+    "queries": [
+     "How long is the warranty on Dropline sneakers?"
+    ],
+    "retrieved": [
+     "repairs-and-defects#covered-defects",
+     "exchanges-and-sizing#exceptions",
+     "glossary#terms",
+     "repairs-and-defects#repairs",
+     "refund-policy#eu-customers",
+     "refund-policy#limited-drops"
+    ],
+    "kept": [
+     "repairs-and-defects#covered-defects",
+     "exchanges-and-sizing#exceptions",
+     "glossary#terms",
+     "repairs-and-defects#repairs",
+     "refund-policy#eu-customers",
+     "refund-policy#limited-drops"
+    ],
+    "id": "o22",
+    "expect": [],
+    "split": "test",
+    "tag": "regression"
+   },
+   {
+    "q": "A UK customer's trainers split open after 80 days. The drop window is 7 days. Do we help?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 6.86,
+    "cost": 0.0026985,
+    "outcome": "answered",
+    "answer": "Yes, we do help. \n\nDefective items can be returned within 90 days regardless of their drop status [6]. Because 80 days falls within this 90-day window, the customer is eligible for assistance, provided the split is caused by a covered manufacturing defect (such as sole separation or broken stitching) rather than normal wear, fading, or machine washing damage [3]. \n\nAdditionally, support agents can approve one goodwill exception per customer per year with a team lead [6].",
+    "queries": [
+     "A UK customer's trainers split open after 80 days. The drop window is 7 days. Do we help?"
+    ],
+    "retrieved": [
+     "refund-policy#limited-drops",
+     "refund-policy#uk-and-us-customers",
+     "repairs-and-defects#covered-defects",
+     "refund-policy#eu-customers",
+     "exchanges-and-sizing#exceptions",
+     "refund-policy#exceptions"
+    ],
+    "kept": [
+     "refund-policy#limited-drops",
+     "refund-policy#uk-and-us-customers",
+     "repairs-and-defects#covered-defects",
+     "refund-policy#eu-customers",
+     "exchanges-and-sizing#exceptions",
+     "refund-policy#exceptions"
+    ],
+    "id": "p07",
+    "expect": [
+     "refund-policy#exceptions"
+    ],
+    "split": "test",
+    "tag": "paraphrase"
+   },
+   {
+    "q": "On what date did bots hammer checkout, and which error code do customers now see when rate limited?",
+    "correct": false,
+    "hallucinated": false,
+    "seconds": 7.3,
+    "cost": 0.002391,
+    "outcome": "answered",
+    "answer": "Based on the provided context:\n\n* **Date:** The context does not state the date on which bots hammered checkout (INC-2051) [2].\n* **Error code:** When rate limited, customers now see error code **E-4029** [1], [3].",
+    "queries": [
+     "On what date did bots hammer checkout, and which error code do customers now see when rate limited?"
+    ],
+    "retrieved": [
+     "inc-2051-postmortem#fixes",
+     "inc-2051-postmortem#what-happened",
+     "checkout-errors#e-4029-too-many-attempts",
+     "api-rate-limits#limits",
+     "drop-day-runbook#during-the-drop",
+     "checkout-errors#e-5031-inventory-timeout"
+    ],
+    "kept": [
+     "inc-2051-postmortem#fixes",
+     "inc-2051-postmortem#what-happened",
+     "checkout-errors#e-4029-too-many-attempts",
+     "api-rate-limits#limits",
+     "drop-day-runbook#during-the-drop",
+     "checkout-errors#e-5031-inventory-timeout"
+    ],
+    "id": "p08",
+    "expect": [
+     "inc-2051-postmortem#overview",
+     "inc-2051-postmortem#fixes"
+    ],
+    "split": "test",
+    "tag": "context"
+   },
+   {
+    "q": "If our on-call engineer ignores a page for 12 minutes, who is paged next?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 4.68,
+    "cost": 0.00158775,
+    "outcome": "answered",
+    "answer": "If the on-call engineer does not respond within 10 minutes, the pager escalates to the **team lead** [1]. Therefore, after 12 minutes, the team lead is paged next [1].",
+    "queries": [
+     "If our on-call engineer ignores a page for 12 minutes, who is paged next?"
+    ],
+    "retrieved": [
+     "on-call#escalation",
+     "on-call#overview",
+     "on-call#severity-levels",
+     "on-call#rotation",
+     "status-and-incident-comms#overview",
+     "status-and-incident-comms#escalation"
+    ],
+    "kept": [
+     "on-call#escalation",
+     "on-call#overview",
+     "on-call#severity-levels",
+     "on-call#rotation",
+     "status-and-incident-comms#overview",
+     "status-and-incident-comms#escalation"
+    ],
+    "id": "p11",
+    "expect": [
+     "on-call#escalation"
+    ],
+    "split": "test",
+    "tag": "paraphrase"
+   },
+   {
+    "q": "What time does the on-call week change over, and in which time zone?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 3.1,
+    "cost": 0.0010057500000000001,
+    "outcome": "answered",
+    "answer": "The weekly on-call rotation changes over on Monday at 09:00 in the Central European Time (CET) time zone [1].",
+    "queries": [
+     "What time does the on-call week change over, and in which time zone?"
+    ],
+    "retrieved": [
+     "on-call#rotation",
+     "on-call#overview",
+     "on-call#severity-levels",
+     "drop-day-runbook#overview",
+     "policy-change-pc-7#why",
+     "policy-change-pc-7#overview"
+    ],
+    "kept": [
+     "on-call#rotation",
+     "on-call#overview",
+     "on-call#severity-levels",
+     "drop-day-runbook#overview",
+     "policy-change-pc-7#why",
+     "policy-change-pc-7#overview"
+    ],
+    "id": "p19",
+    "expect": [
+     "on-call#rotation"
+    ],
+    "split": "test",
+    "tag": "paraphrase"
+   },
+   {
+    "q": "Can a customer in Canada order a drop pair with express delivery?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 5.74,
+    "cost": 0.00227025,
+    "outcome": "answered",
+    "answer": "Based on the current Shipping Policy, no. Express delivery is only available in three regions: the EU, the UK, and the US [6]. (Canada was previously listed for standard delivery under an archived policy [4], but is not included in the current delivery regions [6].)",
+    "queries": [
+     "Can a customer in Canada order a drop pair with express delivery?"
+    ],
+    "retrieved": [
+     "shipping-policy#drop-orders",
+     "shipping-policy-2025#drop-orders",
+     "drop-club#benefits",
+     "shipping-policy-2025#delivery-times",
+     "exchanges-and-sizing#exceptions",
+     "shipping-policy#delivery-times"
+    ],
+    "kept": [
+     "shipping-policy#drop-orders",
+     "shipping-policy-2025#drop-orders",
+     "drop-club#benefits",
+     "shipping-policy-2025#delivery-times",
+     "exchanges-and-sizing#exceptions",
+     "shipping-policy#delivery-times"
+    ],
+    "id": "p20",
+    "expect": [
+     "shipping-policy#where-we-ship"
+    ],
+    "split": "test",
+    "tag": "superseded"
+   },
+   {
+    "q": "What does PC stand for in PC-12, and when did it start?",
+    "correct": false,
+    "hallucinated": true,
+    "seconds": 6.14,
+    "cost": 0.00236025,
+    "outcome": "answered",
+    "answer": "Based on the context:\n\n* **PC** stands for **Policy Change** [1, 2, 3, 4, 6].\n* The context does not state when **PC-12** started or became effective (it only details its rules regarding return windows and item limits) [5].",
+    "queries": [
+     "What does PC stand for in PC-12, and when did it start?"
+    ],
+    "retrieved": [
+     "policy-change-pc-3#overview",
+     "policy-change-pc-6#why",
+     "policy-change-pc-16#overview",
+     "policy-change-pc-9#overview",
+     "drop-calendar-h2-2026#rules-for-these-drops",
+     "policy-change-pc-6#overview"
+    ],
+    "kept": [
+     "policy-change-pc-3#overview",
+     "policy-change-pc-6#why",
+     "policy-change-pc-16#overview",
+     "policy-change-pc-9#overview",
+     "drop-calendar-h2-2026#rules-for-these-drops",
+     "policy-change-pc-6#overview"
+    ],
+    "id": "p21",
+    "expect": [
+     "glossary#terms",
+     "refund-policy#limited-drops"
+    ],
+    "split": "test",
+    "tag": "multi-hop"
+   },
+   {
+    "q": "Do Drop Club points stay when a member returns an order?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 3.18,
+    "cost": 0.0011917499999999999,
+    "outcome": "answered",
+    "answer": "No, Drop Club points do not stay when a member returns an order. The points earned on that order are removed once the refund is issued [1].",
+    "queries": [
+     "Do Drop Club points stay when a member returns an order?"
+    ],
+    "retrieved": [
+     "drop-club#points-on-returns",
+     "drop-club#membership",
+     "drop-club-tiers#points-expiry",
+     "drop-club#benefits",
+     "refund-policy#limited-drops",
+     "exchanges-and-sizing#exceptions"
+    ],
+    "kept": [
+     "drop-club#points-on-returns",
+     "drop-club#membership",
+     "drop-club-tiers#points-expiry",
+     "drop-club#benefits",
+     "refund-policy#limited-drops",
+     "exchanges-and-sizing#exceptions"
+    ],
+    "id": "p24",
+    "expect": [
+     "drop-club#points-on-returns"
+    ],
+    "split": "test",
+    "tag": "paraphrase"
+   },
+   {
+    "q": "Does Air Glide run big or small?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 2.8,
+    "cost": 0.0007845,
+    "outcome": "answered",
+    "answer": "Air Glide runs half a size small [1].",
+    "queries": [
+     "Does Air Glide run big or small?"
+    ],
+    "retrieved": [
+     "exchanges-and-sizing#sizing-advice",
+     "product-guide-dune-walker#fit",
+     "product-guide-echo-low#fit",
+     "product-guide-fjord-boot#fit",
+     "product-guide-swift-loop#fit",
+     "product-guide-terra-lite#fit"
+    ],
+    "kept": [
+     "exchanges-and-sizing#sizing-advice",
+     "product-guide-dune-walker#fit",
+     "product-guide-echo-low#fit",
+     "product-guide-fjord-boot#fit",
+     "product-guide-swift-loop#fit",
+     "product-guide-terra-lite#fit"
+    ],
+    "id": "n04",
+    "expect": [
+     "exchanges-and-sizing#sizing-advice"
+    ],
+    "split": "test",
+    "tag": "easy"
+   },
+   {
+    "q": "A customer disputed a payment with their bank. Should I also send them a refund?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 4.75,
+    "cost": 0.0015315,
+    "outcome": "answered",
+    "answer": "No. If a customer disputes a payment with their bank, do not issue a second refund [1]. Instead, send the order reference to the Payments team within 2 business days so they can respond to the bank with the evidence [1].",
+    "queries": [
+     "A customer disputed a payment with their bank. Should I also send them a refund?"
+    ],
+    "retrieved": [
+     "payments-and-chargebacks#chargebacks",
+     "payments-and-chargebacks#refund-timing",
+     "payments-and-chargebacks#overview",
+     "policy-change-pc-1#why",
+     "policy-change-pc-24#why",
+     "policy-change-pc-18#why"
+    ],
+    "kept": [
+     "payments-and-chargebacks#chargebacks",
+     "payments-and-chargebacks#refund-timing",
+     "payments-and-chargebacks#overview",
+     "policy-change-pc-1#why",
+     "policy-change-pc-24#why",
+     "policy-change-pc-18#why"
+    ],
+    "id": "n05",
+    "expect": [
+     "payments-and-chargebacks#chargebacks"
+    ],
+    "split": "test",
+    "tag": "paraphrase"
+   },
+   {
+    "q": "How long can a bank take to show a refund after we issue it?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 4.71,
+    "cost": 0.00137325,
+    "outcome": "answered",
+    "answer": "After the refund is issued, a customer's bank can take up to 10 more business days to show it [1].",
+    "queries": [
+     "How long can a bank take to show a refund after we issue it?"
+    ],
+    "retrieved": [
+     "payments-and-chargebacks#refund-timing",
+     "payments-and-chargebacks#chargebacks",
+     "refund-policy#standard-returns",
+     "refund-policy-2025#standard-returns",
+     "refund-policy#uk-and-us-customers",
+     "support-playbook#tone"
+    ],
+    "kept": [
+     "payments-and-chargebacks#refund-timing",
+     "payments-and-chargebacks#chargebacks",
+     "refund-policy#standard-returns",
+     "refund-policy-2025#standard-returns",
+     "refund-policy#uk-and-us-customers",
+     "support-playbook#tone"
+    ],
+    "id": "n06",
+    "expect": [
+     "payments-and-chargebacks#refund-timing"
+    ],
+    "split": "test",
+    "tag": "near-duplicate"
+   },
+   {
+    "q": "What went wrong with the size chart in the April Air Glide order email?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 5.02,
+    "cost": 0.00119025,
+    "outcome": "answered",
+    "answer": "In the April Air Glide order email, European sizes were incorrectly displayed under US labels, causing 1,900 customers to see the wrong size chart for two hours [1].",
+    "queries": [
+     "What went wrong with the size chart in the April Air Glide order email?"
+    ],
+    "retrieved": [
+     "inc-2049-postmortem#what-happened",
+     "inc-2049-postmortem#fixes",
+     "inc-2049-postmortem#impact",
+     "inc-2049-postmortem#overview",
+     "exchanges-and-sizing#sizing-advice",
+     "inc-2047-postmortem#what-happened"
+    ],
+    "kept": [
+     "inc-2049-postmortem#what-happened",
+     "inc-2049-postmortem#fixes",
+     "inc-2049-postmortem#impact",
+     "inc-2049-postmortem#overview",
+     "exchanges-and-sizing#sizing-advice",
+     "inc-2047-postmortem#what-happened"
+    ],
+    "id": "n13",
+    "expect": [
+     "inc-2049-postmortem#what-happened"
+    ],
+    "split": "test",
+    "tag": "context"
+   },
+   {
+    "q": "If a customer tried the shoes on indoors, can they still return them?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 3.69,
+    "cost": 0.0012285,
+    "outcome": "answered",
+    "answer": "Yes, a customer can still return them. Trying a pair on indoors to check the fit is permitted, whereas pairs worn outdoors are refused [1].",
+    "queries": [
+     "If a customer tried the shoes on indoors, can they still return them?"
+    ],
+    "retrieved": [
+     "product-care#returns",
+     "refund-policy#standard-returns",
+     "exchanges-and-sizing#exceptions",
+     "refund-policy-2025#standard-returns",
+     "refund-policy#limited-drops",
+     "inc-2047-postmortem#actions"
+    ],
+    "kept": [
+     "product-care#returns",
+     "refund-policy#standard-returns",
+     "exchanges-and-sizing#exceptions",
+     "refund-policy-2025#standard-returns",
+     "refund-policy#limited-drops",
+     "inc-2047-postmortem#actions"
+    ],
+    "id": "n16",
+    "expect": [
+     "product-care#returns"
+    ],
+    "split": "test",
+    "tag": "paraphrase"
+   },
+   {
+    "q": "How many days do defective items have for a refund under the current policy?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 5.3,
+    "cost": 0.00180975,
+    "outcome": "answered",
+    "answer": "Under the current policy, defective items can be returned for a refund within 90 days of delivery (regardless of drop status) [2], [3].",
+    "queries": [
+     "How many days do defective items have for a refund under the current policy?"
+    ],
+    "retrieved": [
+     "refund-policy-2025#exceptions",
+     "repairs-and-defects#returns-for-defects",
+     "refund-policy#exceptions",
+     "refund-policy#limited-drops",
+     "holiday-returns-and-hours#holiday-returns",
+     "refund-policy-2025#standard-returns"
+    ],
+    "kept": [
+     "refund-policy-2025#exceptions",
+     "repairs-and-defects#returns-for-defects",
+     "refund-policy#exceptions",
+     "refund-policy#limited-drops",
+     "holiday-returns-and-hours#holiday-returns",
+     "refund-policy-2025#standard-returns"
+    ],
+    "id": "n19",
+    "expect": [
+     "refund-policy#exceptions"
+    ],
+    "split": "test",
+    "tag": "superseded"
+   },
+   {
+    "q": "What caused the checkout incident on 2026-01-07?",
+    "correct": false,
+    "hallucinated": false,
+    "seconds": 4.95,
+    "cost": 0.00161325,
+    "outcome": "answered",
+    "answer": "Based on the provided context, the cause of the checkout incident on 2026-01-07 (INC-2060) is not mentioned; only its severity (SEV-3), owner (Growth), and affected service (checkout) are listed [1].",
+    "queries": [
+     "What caused the checkout incident on 2026-01-07?"
+    ],
+    "retrieved": [
+     "inc-2060-postmortem#overview",
+     "inc-2072-postmortem#overview",
+     "inc-2062-postmortem#overview",
+     "inc-2074-postmortem#overview",
+     "inc-2076-postmortem#overview",
+     "inc-2051-postmortem#overview"
+    ],
+    "kept": [
+     "inc-2060-postmortem#overview",
+     "inc-2072-postmortem#overview",
+     "inc-2062-postmortem#overview",
+     "inc-2074-postmortem#overview",
+     "inc-2076-postmortem#overview",
+     "inc-2051-postmortem#overview"
+    ],
+    "id": "L001",
+    "expect": [
+     "inc-2060-postmortem#overview",
+     "inc-2060-postmortem#what-happened"
+    ],
+    "split": "test",
+    "tag": "context"
+   },
+   {
+    "q": "What caused the search incident on 2026-01-13?",
+    "correct": false,
+    "hallucinated": false,
+    "seconds": 4.41,
+    "cost": 0.0019649999999999997,
+    "outcome": "answered",
+    "answer": "Based on the provided context, the cause of the search incident on 2026-01-13 (INC-2061) is not mentioned. The context only specifies its date, severity (SEV-1), owner (Growth), and service (search) [1].",
+    "queries": [
+     "What caused the search incident on 2026-01-13?"
+    ],
+    "retrieved": [
+     "inc-2061-postmortem#overview",
+     "inc-2073-postmortem#overview",
+     "inc-2066-postmortem#overview",
+     "inc-2063-postmortem#overview",
+     "inc-2062-postmortem#overview",
+     "inc-2085-postmortem#overview"
+    ],
+    "kept": [
+     "inc-2061-postmortem#overview",
+     "inc-2073-postmortem#overview",
+     "inc-2066-postmortem#overview",
+     "inc-2063-postmortem#overview",
+     "inc-2062-postmortem#overview",
+     "inc-2085-postmortem#overview"
+    ],
+    "id": "L002",
+    "expect": [
+     "inc-2061-postmortem#overview",
+     "inc-2061-postmortem#what-happened"
+    ],
+    "split": "test",
+    "tag": "context"
+   },
+   {
+    "q": "What was done to prevent a repeat of the inventory incident on 2026-01-29?",
+    "correct": false,
+    "hallucinated": false,
+    "seconds": 5.6,
+    "cost": 0.00249675,
+    "outcome": "answered",
+    "answer": "Based on the provided context, the incident on 2026-01-29 corresponds to Postmortem INC-2063 [1]. However, the context does not contain information about the fixes or preventative actions taken for this incident.",
+    "queries": [
+     "What was done to prevent a repeat of the inventory incident on 2026-01-29?"
+    ],
+    "retrieved": [
+     "inc-2063-postmortem#overview",
+     "inc-2075-postmortem#overview",
+     "inc-2066-postmortem#overview",
+     "inc-2060-postmortem#overview",
+     "inc-2062-postmortem#overview",
+     "inc-2064-postmortem#fixes"
+    ],
+    "kept": [
+     "inc-2063-postmortem#overview",
+     "inc-2075-postmortem#overview",
+     "inc-2066-postmortem#overview",
+     "inc-2060-postmortem#overview",
+     "inc-2062-postmortem#overview",
+     "inc-2064-postmortem#fixes"
+    ],
+    "id": "L005",
+    "expect": [
+     "inc-2063-postmortem#overview",
+     "inc-2063-postmortem#fixes"
+    ],
+    "split": "test",
+    "tag": "context"
+   },
+   {
+    "q": "What did the postmortem for INC-2065 say caused the incident?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 3.89,
+    "cost": 0.0011835,
+    "outcome": "answered",
+    "answer": "According to the postmortem for INC-2065, the incident was caused by a runaway nightly job [1].",
+    "queries": [
+     "What did the postmortem for INC-2065 say caused the incident?"
+    ],
+    "retrieved": [
+     "inc-2065-postmortem#what-happened",
+     "inc-2065-postmortem#overview",
+     "inc-2065-postmortem#fixes",
+     "inc-2065-postmortem#impact",
+     "inc-2063-postmortem#overview",
+     "inc-2062-postmortem#what-happened"
+    ],
+    "kept": [
+     "inc-2065-postmortem#what-happened",
+     "inc-2065-postmortem#overview",
+     "inc-2065-postmortem#fixes",
+     "inc-2065-postmortem#impact",
+     "inc-2063-postmortem#overview",
+     "inc-2062-postmortem#what-happened"
+    ],
+    "id": "L008",
+    "expect": [
+     "inc-2065-postmortem#what-happened"
+    ],
+    "split": "test",
+    "tag": "easy"
+   },
+   {
+    "q": "What caused the order tracking incident on 2026-03-04?",
+    "correct": false,
+    "hallucinated": false,
+    "seconds": 6.06,
+    "cost": 0.0023925,
+    "outcome": "answered",
+    "answer": "Based on the provided context, the cause of the order tracking incident on 2026-03-04 (INC-2068) is not mentioned. The context only provides its date, severity (SEV-3), owner (Payments), and affected service (order tracking) [1].",
+    "queries": [
+     "What caused the order tracking incident on 2026-03-04?"
+    ],
+    "retrieved": [
+     "inc-2068-postmortem#overview",
+     "inc-2080-postmortem#overview",
+     "inc-2065-postmortem#overview",
+     "inc-2077-postmortem#overview",
+     "inc-2074-postmortem#overview",
+     "inc-2084-postmortem#overview"
+    ],
+    "kept": [
+     "inc-2068-postmortem#overview",
+     "inc-2080-postmortem#overview",
+     "inc-2065-postmortem#overview",
+     "inc-2077-postmortem#overview",
+     "inc-2074-postmortem#overview",
+     "inc-2084-postmortem#overview"
+    ],
+    "id": "L011",
+    "expect": [
+     "inc-2068-postmortem#overview",
+     "inc-2068-postmortem#what-happened"
+    ],
+    "split": "test",
+    "tag": "context"
+   },
+   {
+    "q": "What caused the payments incident on 2026-04-20?",
+    "correct": false,
+    "hallucinated": false,
+    "seconds": 4.16,
+    "cost": 0.00208425,
+    "outcome": "answered",
+    "answer": "Based on the provided context, the cause of the payments incident on 2026-04-20 (INC-2074) is not mentioned [1].",
+    "queries": [
+     "What caused the payments incident on 2026-04-20?"
+    ],
+    "retrieved": [
+     "inc-2074-postmortem#overview",
+     "inc-2062-postmortem#overview",
+     "inc-2072-postmortem#overview",
+     "inc-2084-postmortem#overview",
+     "inc-2071-postmortem#overview",
+     "inc-2073-postmortem#overview"
+    ],
+    "kept": [
+     "inc-2074-postmortem#overview",
+     "inc-2062-postmortem#overview",
+     "inc-2072-postmortem#overview",
+     "inc-2084-postmortem#overview",
+     "inc-2071-postmortem#overview",
+     "inc-2073-postmortem#overview"
+    ],
+    "id": "L018",
+    "expect": [
+     "inc-2074-postmortem#overview",
+     "inc-2074-postmortem#what-happened"
+    ],
+    "split": "test",
+    "tag": "context"
+   },
+   {
+    "q": "What caused the waiting room incident on 2026-05-05?",
+    "correct": false,
+    "hallucinated": false,
+    "seconds": 5.46,
+    "cost": 0.0025612499999999997,
+    "outcome": "answered",
+    "answer": "Based on the provided context, the cause of the waiting room incident on 2026-05-05 (Postmortem INC-2076) is not mentioned. The context only specifies that the incident had a severity of SEV-3, was owned by Payments, and involved the waiting room service [1].",
+    "queries": [
+     "What caused the waiting room incident on 2026-05-05?"
+    ],
+    "retrieved": [
+     "inc-2076-postmortem#overview",
+     "inc-2064-postmortem#overview",
+     "policy-change-pc-26#what-changed",
+     "inc-2051-postmortem#overview",
+     "inc-2077-postmortem#overview",
+     "inc-2079-postmortem#overview"
+    ],
+    "kept": [
+     "inc-2076-postmortem#overview",
+     "inc-2064-postmortem#overview",
+     "policy-change-pc-26#what-changed",
+     "inc-2051-postmortem#overview",
+     "inc-2077-postmortem#overview",
+     "inc-2079-postmortem#overview"
+    ],
+    "id": "L021",
+    "expect": [
+     "inc-2076-postmortem#overview",
+     "inc-2076-postmortem#what-happened"
+    ],
+    "split": "test",
+    "tag": "context"
+   },
+   {
+    "q": "How long did the order tracking incident on 2026-05-26 last?",
+    "correct": false,
+    "hallucinated": true,
+    "seconds": 4.46,
+    "cost": 0.0018915,
+    "outcome": "answered",
+    "answer": "Based on the provided context, the duration of the order tracking incident on 2026-05-26 (INC-2080) is not mentioned [1].",
+    "queries": [
+     "How long did the order tracking incident on 2026-05-26 last?"
+    ],
+    "retrieved": [
+     "inc-2080-postmortem#overview",
+     "inc-2068-postmortem#overview",
+     "inc-2077-postmortem#overview",
+     "inc-2086-postmortem#overview",
+     "inc-2065-postmortem#overview",
+     "inc-2052-postmortem#overview"
+    ],
+    "kept": [
+     "inc-2080-postmortem#overview",
+     "inc-2068-postmortem#overview",
+     "inc-2077-postmortem#overview",
+     "inc-2086-postmortem#overview",
+     "inc-2065-postmortem#overview",
+     "inc-2052-postmortem#overview"
+    ],
+    "id": "L026",
+    "expect": [
+     "inc-2080-postmortem#overview",
+     "inc-2080-postmortem#what-happened"
+    ],
+    "split": "test",
+    "tag": "context"
+   },
+   {
+    "q": "How long did the returns portal incident on 2026-05-30 last?",
+    "correct": false,
+    "hallucinated": false,
+    "seconds": 5.06,
+    "cost": 0.0020475,
+    "outcome": "answered",
+    "answer": "Based on the provided context, it is not mentioned how long the returns portal incident on 2026-05-30 lasted; only its date, severity, owner, and affected service are provided [1].",
+    "queries": [
+     "How long did the returns portal incident on 2026-05-30 last?"
+    ],
+    "retrieved": [
+     "inc-2081-postmortem#overview",
+     "inc-2069-postmortem#overview",
+     "inc-2051-postmortem#overview",
+     "inc-2047-postmortem#overview",
+     "inc-2084-postmortem#overview",
+     "inc-2080-postmortem#overview"
+    ],
+    "kept": [
+     "inc-2081-postmortem#overview",
+     "inc-2069-postmortem#overview",
+     "inc-2051-postmortem#overview",
+     "inc-2047-postmortem#overview",
+     "inc-2084-postmortem#overview",
+     "inc-2080-postmortem#overview"
+    ],
+    "id": "L027",
+    "expect": [
+     "inc-2081-postmortem#overview",
+     "inc-2081-postmortem#what-happened"
+    ],
+    "split": "test",
+    "tag": "context"
+   },
+   {
+    "q": "About how many customers were affected by the image delivery incident on 2026-07-21?",
+    "correct": false,
+    "hallucinated": false,
+    "seconds": 5.43,
+    "cost": 0.00191925,
+    "outcome": "answered",
+    "answer": "Based on the provided context, there is no information mentioning an \"image delivery incident\" or the date \"2026-07-21,\" so it is not possible to determine how many customers were affected.",
+    "queries": [
+     "About how many customers were affected by the image delivery incident on 2026-07-21?"
+    ],
+    "retrieved": [
+     "inc-2066-postmortem#impact",
+     "inc-2065-postmortem#impact",
+     "inc-2071-postmortem#impact",
+     "inc-2067-postmortem#impact",
+     "inc-2064-postmortem#impact",
+     "inc-2076-postmortem#impact"
+    ],
+    "kept": [
+     "inc-2066-postmortem#impact",
+     "inc-2065-postmortem#impact",
+     "inc-2071-postmortem#impact",
+     "inc-2067-postmortem#impact",
+     "inc-2064-postmortem#impact",
+     "inc-2076-postmortem#impact"
+    ],
+    "id": "L035",
+    "expect": [
+     "inc-2089-postmortem#overview",
+     "inc-2089-postmortem#impact"
+    ],
+    "split": "test",
+    "tag": "context"
+   },
+   {
+    "q": "What changed in the policy change that took effect on 2025-10-12?",
+    "correct": false,
+    "hallucinated": false,
+    "seconds": 6.38,
+    "cost": 0.00214125,
+    "outcome": "answered",
+    "answer": "Based on the provided context, the policy change that took effect on 2025-10-12 is **Policy Change PC-3**, owned by Logistics [1]. However, the context does not provide details about what specifically changed in this policy.",
+    "queries": [
+     "What changed in the policy change that took effect on 2025-10-12?"
+    ],
+    "retrieved": [
+     "policy-change-pc-3#overview",
+     "policy-change-pc-2#overview",
+     "policy-change-pc-5#overview",
+     "policy-change-pc-1#overview",
+     "policy-change-pc-4#overview",
+     "policy-change-pc-8#overview"
+    ],
+    "kept": [
+     "policy-change-pc-3#overview",
+     "policy-change-pc-2#overview",
+     "policy-change-pc-5#overview",
+     "policy-change-pc-1#overview",
+     "policy-change-pc-4#overview",
+     "policy-change-pc-8#overview"
+    ],
+    "id": "L038",
+    "expect": [
+     "policy-change-pc-3#overview",
+     "policy-change-pc-3#what-changed"
+    ],
+    "split": "test",
+    "tag": "context"
+   },
+   {
+    "q": "How does the Cloud Rider fit?",
+    "correct": false,
+    "hallucinated": true,
+    "seconds": 3.46,
+    "cost": 0.0010267499999999999,
+    "outcome": "answered",
+    "answer": "The Cloud Rider runs half a size large [2].",
+    "queries": [
+     "How does the Cloud Rider fit?"
+    ],
+    "retrieved": [
+     "drop-report-cloud-rider#results",
+     "product-guide-echo-low#fit",
+     "product-guide-dune-walker#fit",
+     "product-guide-fjord-boot#fit",
+     "product-guide-swift-loop#fit",
+     "product-guide-terra-lite#fit"
+    ],
+    "kept": [
+     "drop-report-cloud-rider#results",
+     "product-guide-echo-low#fit",
+     "product-guide-dune-walker#fit",
+     "product-guide-fjord-boot#fit",
+     "product-guide-swift-loop#fit",
+     "product-guide-terra-lite#fit"
+    ],
+    "id": "L049",
+    "expect": [
+     "product-guide-cloud-rider#overview",
+     "product-guide-cloud-rider#fit"
+    ],
+    "split": "test",
+    "tag": "context"
+   },
+   {
+    "q": "How does the Swift Loop fit?",
+    "correct": false,
+    "hallucinated": true,
+    "seconds": 3.34,
+    "cost": 0.00098175,
+    "outcome": "answered",
+    "answer": "The Swift Loop fits true to size [5].",
+    "queries": [
+     "How does the Swift Loop fit?"
+    ],
+    "retrieved": [
+     "product-guide-swift-loop#overview",
+     "drop-report-swift-loop#results",
+     "drop-report-swift-loop#overview",
+     "drop-report-swift-loop#traffic",
+     "product-guide-volt-runner#fit",
+     "product-guide-harbor-slip#fit"
+    ],
+    "kept": [
+     "product-guide-swift-loop#overview",
+     "drop-report-swift-loop#results",
+     "drop-report-swift-loop#overview",
+     "drop-report-swift-loop#traffic",
+     "product-guide-volt-runner#fit",
+     "product-guide-harbor-slip#fit"
+    ],
+    "id": "L052",
+    "expect": [
+     "product-guide-swift-loop#overview",
+     "product-guide-swift-loop#fit"
+    ],
+    "split": "test",
+    "tag": "context"
+   },
+   {
+    "q": "How does the Harbor Slip fit?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 3.27,
+    "cost": 0.0010485,
+    "outcome": "answered",
+    "answer": "The Harbor Slip fits true to size [5].",
+    "queries": [
+     "How does the Harbor Slip fit?"
+    ],
+    "retrieved": [
+     "product-guide-harbor-slip#overview",
+     "drop-report-harbor-slip#results",
+     "drop-report-harbor-slip#overview",
+     "drop-report-harbor-slip#traffic",
+     "product-guide-sky-court#fit",
+     "product-guide-trail-glide#fit"
+    ],
+    "kept": [
+     "product-guide-harbor-slip#overview",
+     "drop-report-harbor-slip#results",
+     "drop-report-harbor-slip#overview",
+     "drop-report-harbor-slip#traffic",
+     "product-guide-sky-court#fit",
+     "product-guide-trail-glide#fit"
+    ],
+    "id": "L054",
+    "expect": [
+     "product-guide-harbor-slip#overview",
+     "product-guide-harbor-slip#fit"
+    ],
+    "split": "test",
+    "tag": "context"
+   },
+   {
+    "q": "How long should the Pulse Mid air dry after cleaning?",
+    "correct": false,
+    "hallucinated": true,
+    "seconds": 6.61,
+    "cost": 0.0027307499999999997,
+    "outcome": "answered",
+    "answer": "Based on the provided context, the \"Pulse Mid\" is not specifically mentioned, so it cannot be determined which drying time applies to it. The context lists drying times of 6 hours [1, 2], 10 hours [6], or 18 hours [3, 4, 5] for unspecified pairs.",
+    "queries": [
+     "How long should the Pulse Mid air dry after cleaning?"
+    ],
+    "retrieved": [
+     "product-guide-terra-lite#care",
+     "product-guide-dune-walker#care",
+     "product-guide-trail-glide#care",
+     "product-guide-swift-loop#care",
+     "product-guide-cloud-rider#care",
+     "product-guide-air-glide#care"
+    ],
+    "kept": [
+     "product-guide-terra-lite#care",
+     "product-guide-dune-walker#care",
+     "product-guide-trail-glide#care",
+     "product-guide-swift-loop#care",
+     "product-guide-cloud-rider#care",
+     "product-guide-air-glide#care"
+    ],
+    "id": "L055",
+    "expect": [
+     "product-guide-pulse-mid#overview",
+     "product-guide-pulse-mid#care"
+    ],
+    "split": "test",
+    "tag": "context"
+   },
+   {
+    "q": "How long should the Ridge Pro air dry after cleaning?",
+    "correct": false,
+    "hallucinated": true,
+    "seconds": 5.87,
+    "cost": 0.001971,
+    "outcome": "answered",
+    "answer": "Based on the provided context, the guide contains conflicting information: it states to let the pair air dry for either 10 hours ([1], [2], [3]) or 18 hours ([4], [5], [6]) away from heat.",
+    "queries": [
+     "How long should the Ridge Pro air dry after cleaning?"
+    ],
+    "retrieved": [
+     "product-guide-harbor-slip#care",
+     "product-guide-fjord-boot#care",
+     "product-guide-air-glide#care",
+     "product-guide-swift-loop#care",
+     "product-guide-cloud-rider#care",
+     "product-guide-trail-glide#care"
+    ],
+    "kept": [
+     "product-guide-harbor-slip#care",
+     "product-guide-fjord-boot#care",
+     "product-guide-air-glide#care",
+     "product-guide-swift-loop#care",
+     "product-guide-cloud-rider#care",
+     "product-guide-trail-glide#care"
+    ],
+    "id": "L056",
+    "expect": [
+     "product-guide-ridge-pro#overview",
+     "product-guide-ridge-pro#care"
+    ],
+    "split": "test",
+    "tag": "context"
+   },
+   {
+    "q": "How long should the Echo Low air dry after cleaning?",
+    "correct": false,
+    "hallucinated": true,
+    "seconds": 5.84,
+    "cost": 0.002037,
+    "outcome": "answered",
+    "answer": "Based on the provided context, the \"Echo Low\" is not specifically mentioned, so it is unclear which care instruction applies to it. The guides list air-drying times of 6 hours [4, 5], 10 hours [1, 2, 3], or 18 hours [6].",
+    "queries": [
+     "How long should the Echo Low air dry after cleaning?"
+    ],
+    "retrieved": [
+     "product-guide-fjord-boot#care",
+     "product-guide-harbor-slip#care",
+     "product-guide-air-glide#care",
+     "product-guide-terra-lite#care",
+     "product-guide-dune-walker#care",
+     "product-guide-trail-glide#care"
+    ],
+    "kept": [
+     "product-guide-fjord-boot#care",
+     "product-guide-harbor-slip#care",
+     "product-guide-air-glide#care",
+     "product-guide-terra-lite#care",
+     "product-guide-dune-walker#care",
+     "product-guide-trail-glide#care"
+    ],
+    "id": "L057",
+    "expect": [
+     "product-guide-echo-low#overview",
+     "product-guide-echo-low#care"
+    ],
+    "split": "test",
+    "tag": "context"
+   },
+   {
+    "q": "How many partner return points are there in Denmark?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 3.12,
+    "cost": 0.00070275,
+    "outcome": "answered",
+    "answer": "There are 606 partner return points in Denmark [1].",
+    "queries": [
+     "How many partner return points are there in Denmark?"
+    ],
+    "retrieved": [
+     "delivery-guide-denmark#return-points",
+     "delivery-guide-sweden#return-points",
+     "delivery-guide-czechia#return-points",
+     "delivery-guide-portugal#return-points",
+     "delivery-guide-germany#return-points",
+     "delivery-guide-poland#return-points"
+    ],
+    "kept": [
+     "delivery-guide-denmark#return-points",
+     "delivery-guide-sweden#return-points",
+     "delivery-guide-czechia#return-points",
+     "delivery-guide-portugal#return-points",
+     "delivery-guide-germany#return-points",
+     "delivery-guide-poland#return-points"
+    ],
+    "id": "L064",
+    "expect": [
+     "delivery-guide-denmark#return-points"
+    ],
+    "split": "test",
+    "tag": "near-duplicate"
+   },
+   {
+    "q": "How many partner return points are there in Finland?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 3.38,
+    "cost": 0.0006937499999999999,
+    "outcome": "answered",
+    "answer": "There are 883 partner return points in Finland [1].",
+    "queries": [
+     "How many partner return points are there in Finland?"
+    ],
+    "retrieved": [
+     "delivery-guide-finland#return-points",
+     "delivery-guide-sweden#return-points",
+     "delivery-guide-poland#return-points",
+     "delivery-guide-denmark#return-points",
+     "delivery-guide-italy#return-points",
+     "delivery-guide-germany#return-points"
+    ],
+    "kept": [
+     "delivery-guide-finland#return-points",
+     "delivery-guide-sweden#return-points",
+     "delivery-guide-poland#return-points",
+     "delivery-guide-denmark#return-points",
+     "delivery-guide-italy#return-points",
+     "delivery-guide-germany#return-points"
+    ],
+    "id": "L065",
+    "expect": [
+     "delivery-guide-finland#return-points"
+    ],
+    "split": "test",
+    "tag": "near-duplicate"
+   },
+   {
+    "q": "How many partner return points are there in Germany?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 2.74,
+    "cost": 0.0006929999999999999,
+    "outcome": "answered",
+    "answer": "There are 713 partner return points in Germany [1].",
+    "queries": [
+     "How many partner return points are there in Germany?"
+    ],
+    "retrieved": [
+     "delivery-guide-germany#return-points",
+     "delivery-guide-austria#return-points",
+     "delivery-guide-italy#return-points",
+     "delivery-guide-france#return-points",
+     "delivery-guide-poland#return-points",
+     "delivery-guide-portugal#return-points"
+    ],
+    "kept": [
+     "delivery-guide-germany#return-points",
+     "delivery-guide-austria#return-points",
+     "delivery-guide-italy#return-points",
+     "delivery-guide-france#return-points",
+     "delivery-guide-poland#return-points",
+     "delivery-guide-portugal#return-points"
+    ],
+    "id": "L067",
+    "expect": [
+     "delivery-guide-germany#return-points"
+    ],
+    "split": "test",
+    "tag": "near-duplicate"
+   },
+   {
+    "q": "How many business days does a standard parcel to Spain usually take?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 3.49,
+    "cost": 0.00072075,
+    "outcome": "answered",
+    "answer": "A standard parcel to Spain usually takes 4 business days [1].",
+    "queries": [
+     "How many business days does a standard parcel to Spain usually take?"
+    ],
+    "retrieved": [
+     "delivery-guide-spain#delivery-times",
+     "delivery-guide-portugal#delivery-times",
+     "delivery-guide-italy#delivery-times",
+     "delivery-guide-netherlands#delivery-times",
+     "delivery-guide-belgium#delivery-times",
+     "delivery-guide-poland#delivery-times"
+    ],
+    "kept": [
+     "delivery-guide-spain#delivery-times",
+     "delivery-guide-portugal#delivery-times",
+     "delivery-guide-italy#delivery-times",
+     "delivery-guide-netherlands#delivery-times",
+     "delivery-guide-belgium#delivery-times",
+     "delivery-guide-poland#delivery-times"
+    ],
+    "id": "L070",
+    "expect": [
+     "delivery-guide-spain#delivery-times"
+    ],
+    "split": "test",
+    "tag": "near-duplicate"
+   },
+   {
+    "q": "How many pairs were released in the Ridge Pro drop?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 3.57,
+    "cost": 0.001284,
+    "outcome": "answered",
+    "answer": "There were 4,000 pairs released in the Ridge Pro drop [2].",
+    "queries": [
+     "How many pairs were released in the Ridge Pro drop?"
+    ],
+    "retrieved": [
+     "drop-report-ridge-pro#results",
+     "drop-report-ridge-pro#overview",
+     "drop-report-ridge-pro#traffic",
+     "fraud-and-reseller-controls#purchase-limits",
+     "drop-report-cloud-rider#results",
+     "product-guide-ridge-pro#overview"
+    ],
+    "kept": [
+     "drop-report-ridge-pro#results",
+     "drop-report-ridge-pro#overview",
+     "drop-report-ridge-pro#traffic",
+     "fraud-and-reseller-controls#purchase-limits",
+     "drop-report-cloud-rider#results",
+     "product-guide-ridge-pro#overview"
+    ],
+    "id": "L078",
+    "expect": [
+     "drop-report-ridge-pro#overview"
+    ],
+    "split": "test",
+    "tag": "easy"
+   },
+   {
+    "q": "What caused the incident on 2026-02-30?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 5.07,
+    "cost": 0.00203175,
+    "outcome": "answered",
+    "answer": "Based on the provided context, there is no information about an incident occurring on 2026-02-30, nor do the records include the causes of the incidents listed [1, 2, 3, 4, 5, 6].",
+    "queries": [
+     "What caused the incident on 2026-02-30?"
+    ],
+    "retrieved": [
+     "inc-2066-postmortem#overview",
+     "inc-2067-postmortem#overview",
+     "inc-2074-postmortem#overview",
+     "inc-2084-postmortem#overview",
+     "inc-2062-postmortem#overview",
+     "inc-2069-postmortem#overview"
+    ],
+    "kept": [
+     "inc-2066-postmortem#overview",
+     "inc-2067-postmortem#overview",
+     "inc-2074-postmortem#overview",
+     "inc-2084-postmortem#overview",
+     "inc-2062-postmortem#overview",
+     "inc-2069-postmortem#overview"
+    ],
+    "id": "L081",
+    "expect": [],
+    "split": "test",
+    "tag": "unanswerable"
+   },
+   {
+    "q": "How does the Glacier High fit?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 6.73,
+    "cost": 0.0021705,
+    "outcome": "answered",
+    "answer": "Based on the provided context, there is no mention of the \"Glacier High,\" so it is not possible to determine how it fits.",
+    "queries": [
+     "How does the Glacier High fit?"
+    ],
+    "retrieved": [
+     "product-guide-dune-walker#fit",
+     "product-guide-echo-low#fit",
+     "product-guide-fjord-boot#fit",
+     "product-guide-swift-loop#fit",
+     "product-guide-terra-lite#fit",
+     "product-guide-pulse-mid#fit"
+    ],
+    "kept": [
+     "product-guide-dune-walker#fit",
+     "product-guide-echo-low#fit",
+     "product-guide-fjord-boot#fit",
+     "product-guide-swift-loop#fit",
+     "product-guide-terra-lite#fit",
+     "product-guide-pulse-mid#fit"
+    ],
+    "id": "L082",
+    "expect": [],
+    "split": "test",
+    "tag": "unanswerable"
+   },
+   {
+    "q": "How many partner return points are there in Norway?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 3.44,
+    "cost": 0.00101625,
+    "outcome": "answered",
+    "answer": "Based on the provided context, there is no information about how many partner return points there are in Norway.",
+    "queries": [
+     "How many partner return points are there in Norway?"
+    ],
+    "retrieved": [
+     "delivery-guide-denmark#return-points",
+     "delivery-guide-sweden#return-points",
+     "delivery-guide-portugal#return-points",
+     "delivery-guide-poland#return-points",
+     "delivery-guide-italy#return-points",
+     "delivery-guide-finland#return-points"
+    ],
+    "kept": [
+     "delivery-guide-denmark#return-points",
+     "delivery-guide-sweden#return-points",
+     "delivery-guide-portugal#return-points",
+     "delivery-guide-poland#return-points",
+     "delivery-guide-italy#return-points",
+     "delivery-guide-finland#return-points"
+    ],
+    "id": "L083",
+    "expect": [],
+    "split": "test",
+    "tag": "unanswerable"
+   }
+  ]
+ },
+ "config": {
+  "chat": "google_genai:gemini-3.8-flash",
+  "judge": "deepseek:deepseek-flash",
+  "embed": "google:gemini-embedding-001",
+  "variant": "base",
+  "rerank": "none",
+  "candidates_in": null,
+  "k_out": 6,
+  "questions": 44
+ }
+}

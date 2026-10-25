@@ -1,0 +1,665 @@
+{
+ "docctx_ce": {
+  "correct": 0.7894736842105263,
+  "hallucinated": 0.05263157894736842,
+  "avg_seconds": 5.298421052631579,
+  "avg_cost": 0.0016228026315789474,
+  "rows": [
+   {
+    "q": "A customer sees error E-4012 at checkout. What do I tell them?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 7.2,
+    "cost": 0.0017984999999999998,
+    "outcome": "answered",
+    "answer": "Tell the customer: \n\n\"Your bank is asking you to confirm this payment. Open your banking app and approve it within 10 minutes; your pair is reserved until then.\" [1] \n\n*(Note: The customer has not been charged until the approval is completed [1].)*",
+    "queries": [
+     "A customer sees error E-4012 at checkout. What do I tell them?"
+    ],
+    "retrieved": [
+     "checkout-errors#e-4012-payment-hold",
+     "checkout-errors#e-5031-inventory-timeout",
+     "checkout-errors#e-4029-too-many-attempts",
+     "checkout-errors#e-5090-unknown-error",
+     "checkout-errors#overview",
+     "inc-2051-postmortem#fixes"
+    ],
+    "kept": [
+     "checkout-errors#e-4012-payment-hold",
+     "checkout-errors#e-5031-inventory-timeout",
+     "checkout-errors#e-4029-too-many-attempts",
+     "checkout-errors#e-5090-unknown-error",
+     "checkout-errors#overview",
+     "inc-2051-postmortem#fixes"
+    ],
+    "id": "o02",
+    "expect": [
+     "checkout-errors#e-4012-payment-hold"
+    ],
+    "split": "test",
+    "tag": "regression"
+   },
+   {
+    "q": "Why did we shorten the return window for drops?",
+    "correct": false,
+    "hallucinated": false,
+    "seconds": 5.86,
+    "cost": 0.0016215000000000001,
+    "outcome": "answered",
+    "answer": "The return window for drops was shortened as a result of incident INC-2047, which was caused by a reseller return wave following the Air Glide drop [1], [2].",
+    "queries": [
+     "Why did we shorten the return window for drops?"
+    ],
+    "retrieved": [
+     "inc-2047-postmortem#actions",
+     "refund-policy#limited-drops",
+     "refund-policy#eu-customers",
+     "refund-policy-2025#limited-drops",
+     "refund-policy#uk-and-us-customers",
+     "exchanges-and-sizing#size-exchanges"
+    ],
+    "kept": [
+     "inc-2047-postmortem#actions",
+     "refund-policy#limited-drops",
+     "refund-policy#eu-customers",
+     "refund-policy-2025#limited-drops",
+     "refund-policy#uk-and-us-customers",
+     "exchanges-and-sizing#size-exchanges"
+    ],
+    "id": "o05",
+    "expect": [
+     "inc-2047-postmortem#what-happened",
+     "inc-2047-postmortem#actions"
+    ],
+    "split": "test",
+    "tag": "regression"
+   },
+   {
+    "q": "How fast must we respond to a SEV-1?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 4.34,
+    "cost": 0.00108675,
+    "outcome": "answered",
+    "answer": "You must respond to a SEV-1 within 5 minutes [1].",
+    "queries": [
+     "How fast must we respond to a SEV-1?"
+    ],
+    "retrieved": [
+     "on-call#severity-levels",
+     "status-and-incident-comms#sev-1-updates",
+     "status-and-incident-comms#postmortems",
+     "inc-2051-postmortem#what-happened",
+     "inc-2051-postmortem#fixes",
+     "holiday-returns-and-hours#closed-days"
+    ],
+    "kept": [
+     "on-call#severity-levels",
+     "status-and-incident-comms#sev-1-updates",
+     "status-and-incident-comms#postmortems",
+     "inc-2051-postmortem#what-happened",
+     "inc-2051-postmortem#fixes",
+     "holiday-returns-and-hours#closed-days"
+    ],
+    "id": "o10",
+    "expect": [
+     "on-call#severity-levels"
+    ],
+    "split": "test",
+    "tag": "regression"
+   },
+   {
+    "q": "My customer's Volt Runners arrived broken after 2 months. Can they return them?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 5.81,
+    "cost": 0.00212175,
+    "outcome": "answered",
+    "answer": "Yes, they can return them. Defective items can be returned for a refund within 90 days of delivery, regardless of drop status [2, 3]. Since 2 months is within the 90-day window, the item qualifies for a return [2, 3].",
+    "queries": [
+     "My customer's Volt Runners arrived broken after 2 months. Can they return them?"
+    ],
+    "retrieved": [
+     "exchanges-and-sizing#exceptions",
+     "repairs-and-defects#returns-for-defects",
+     "refund-policy#exceptions",
+     "exchanges-and-sizing#sizing-advice",
+     "refund-policy-2025#exceptions",
+     "refund-policy#standard-returns"
+    ],
+    "kept": [
+     "exchanges-and-sizing#exceptions",
+     "repairs-and-defects#returns-for-defects",
+     "refund-policy#exceptions",
+     "exchanges-and-sizing#sizing-advice",
+     "refund-policy-2025#exceptions",
+     "refund-policy#standard-returns"
+    ],
+    "id": "o17",
+    "expect": [
+     "refund-policy#exceptions"
+    ],
+    "split": "test",
+    "tag": "regression"
+   },
+   {
+    "q": "Can customers return gift cards?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 3.73,
+    "cost": 0.0011864999999999998,
+    "outcome": "answered",
+    "answer": "Based on the provided context, there is no information about whether customers can return gift cards.",
+    "queries": [
+     "Can customers return gift cards?"
+    ],
+    "retrieved": [
+     "refund-policy#exceptions",
+     "exchanges-and-sizing#exceptions",
+     "holiday-returns-and-hours#holiday-returns",
+     "refund-policy-2025#exceptions",
+     "repairs-and-defects#returns-for-defects",
+     "refund-policy#standard-returns"
+    ],
+    "kept": [
+     "refund-policy#exceptions",
+     "exchanges-and-sizing#exceptions",
+     "holiday-returns-and-hours#holiday-returns",
+     "refund-policy-2025#exceptions",
+     "repairs-and-defects#returns-for-defects",
+     "refund-policy#standard-returns"
+    ],
+    "id": "o18",
+    "expect": [],
+    "split": "test",
+    "tag": "regression"
+   },
+   {
+    "q": "How long is the warranty on Dropline sneakers?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 6.44,
+    "cost": 0.0022635,
+    "outcome": "answered",
+    "answer": "Based on the provided context, there is no mention of a warranty specifically for \"Dropline sneakers.\" \n\nThe context only states that defective items can be returned within 90 days regardless of drop status [2].",
+    "queries": [
+     "How long is the warranty on Dropline sneakers?"
+    ],
+    "retrieved": [
+     "refund-policy#uk-and-us-customers",
+     "refund-policy#exceptions",
+     "refund-policy#eu-customers",
+     "refund-policy#limited-drops",
+     "exchanges-and-sizing#exceptions",
+     "drop-calendar-h2-2026#rules-for-these-drops"
+    ],
+    "kept": [
+     "refund-policy#uk-and-us-customers",
+     "refund-policy#exceptions",
+     "refund-policy#eu-customers",
+     "refund-policy#limited-drops",
+     "exchanges-and-sizing#exceptions",
+     "drop-calendar-h2-2026#rules-for-these-drops"
+    ],
+    "id": "o22",
+    "expect": [],
+    "split": "test",
+    "tag": "regression"
+   },
+   {
+    "q": "A UK customer's trainers split open after 80 days. The drop window is 7 days. Do we help?",
+    "correct": false,
+    "hallucinated": true,
+    "seconds": 8.74,
+    "cost": 0.0033555,
+    "outcome": "answered",
+    "answer": "Based on the provided context, UK customers have a 7-day return window for limited drops and a 30-day standard return window [1], [3]. \n\nHowever, the context does not contain any information regarding policies for damaged, defective, or faulty items (such as trainers splitting open after 80 days) or warranty claims. Therefore, the provided text does not specify whether assistance or a remedy can be offered in this situation.",
+    "queries": [
+     "A UK customer's trainers split open after 80 days. The drop window is 7 days. Do we help?"
+    ],
+    "retrieved": [
+     "refund-policy#uk-and-us-customers",
+     "refund-policy#eu-customers",
+     "refund-policy#limited-drops",
+     "drop-calendar-h2-2026#rules-for-these-drops",
+     "support-playbook#macros",
+     "holiday-returns-and-hours#holiday-returns"
+    ],
+    "kept": [
+     "refund-policy#uk-and-us-customers",
+     "refund-policy#eu-customers",
+     "refund-policy#limited-drops",
+     "drop-calendar-h2-2026#rules-for-these-drops",
+     "support-playbook#macros",
+     "holiday-returns-and-hours#holiday-returns"
+    ],
+    "id": "p07",
+    "expect": [
+     "refund-policy#exceptions"
+    ],
+    "split": "test",
+    "tag": "paraphrase"
+   },
+   {
+    "q": "On what date did bots hammer checkout, and which error code do customers now see when rate limited?",
+    "correct": false,
+    "hallucinated": false,
+    "seconds": 6.56,
+    "cost": 0.0027022500000000002,
+    "outcome": "answered",
+    "answer": "Based on the provided context:\n\n* **Date:** The context does not state the specific date on which bots hammered checkout (INC-2051) [1]. \n* **Error code:** Customers now receive error code **E-4029** (\"Too many attempts\") when rate limited after 5 checkout attempts in one minute [2], [4].",
+    "queries": [
+     "On what date did bots hammer checkout, and which error code do customers now see when rate limited?"
+    ],
+    "retrieved": [
+     "inc-2051-postmortem#what-happened",
+     "checkout-errors#e-4029-too-many-attempts",
+     "drop-day-runbook#t-10-minutes",
+     "inc-2051-postmortem#fixes",
+     "drop-day-runbook#during-the-drop",
+     "checkout-errors#e-5031-inventory-timeout"
+    ],
+    "kept": [
+     "inc-2051-postmortem#what-happened",
+     "checkout-errors#e-4029-too-many-attempts",
+     "drop-day-runbook#t-10-minutes",
+     "inc-2051-postmortem#fixes",
+     "drop-day-runbook#during-the-drop",
+     "checkout-errors#e-5031-inventory-timeout"
+    ],
+    "id": "p08",
+    "expect": [
+     "inc-2051-postmortem#overview",
+     "inc-2051-postmortem#fixes"
+    ],
+    "split": "test",
+    "tag": "context"
+   },
+   {
+    "q": "If our on-call engineer ignores a page for 12 minutes, who is paged next?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 4.79,
+    "cost": 0.00100425,
+    "outcome": "answered",
+    "answer": "If the on-call engineer does not respond within 10 minutes, the pager escalates next to the team lead [1].",
+    "queries": [
+     "If our on-call engineer ignores a page for 12 minutes, who is paged next?"
+    ],
+    "retrieved": [
+     "on-call#escalation",
+     "on-call#severity-levels",
+     "drop-day-runbook#during-the-drop",
+     "on-call#overview",
+     "status-and-incident-comms#sev-1-updates",
+     "on-call#rotation"
+    ],
+    "kept": [
+     "on-call#escalation",
+     "on-call#severity-levels",
+     "drop-day-runbook#during-the-drop",
+     "on-call#overview",
+     "status-and-incident-comms#sev-1-updates",
+     "on-call#rotation"
+    ],
+    "id": "p11",
+    "expect": [
+     "on-call#escalation"
+    ],
+    "split": "test",
+    "tag": "paraphrase"
+   },
+   {
+    "q": "What time does the on-call week change over, and in which time zone?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 4.71,
+    "cost": 0.0011475,
+    "outcome": "answered",
+    "answer": "The on-call week changes over on Monday at 09:00 in the CET time zone [1].",
+    "queries": [
+     "What time does the on-call week change over, and in which time zone?"
+    ],
+    "retrieved": [
+     "on-call#rotation",
+     "drop-day-runbook#during-the-drop",
+     "drop-day-runbook#t-10-minutes",
+     "drop-day-runbook#overview",
+     "drop-day-runbook#after-the-drop",
+     "drop-day-runbook#t-60-minutes"
+    ],
+    "kept": [
+     "on-call#rotation",
+     "drop-day-runbook#during-the-drop",
+     "drop-day-runbook#t-10-minutes",
+     "drop-day-runbook#overview",
+     "drop-day-runbook#after-the-drop",
+     "drop-day-runbook#t-60-minutes"
+    ],
+    "id": "p19",
+    "expect": [
+     "on-call#rotation"
+    ],
+    "split": "test",
+    "tag": "paraphrase"
+   },
+   {
+    "q": "Can a customer in Canada order a drop pair with express delivery?",
+    "correct": false,
+    "hallucinated": false,
+    "seconds": 6.62,
+    "cost": 0.0019042500000000001,
+    "outcome": "answered",
+    "answer": "Based on the provided context, there is no information specifying whether shipping or express delivery is available to customers in Canada. \n\nThe context only mentions that Drop Club members can receive free express delivery for a year once they reach 500 points [6], but it does not specify eligible countries or international delivery destinations.",
+    "queries": [
+     "Can a customer in Canada order a drop pair with express delivery?"
+    ],
+    "retrieved": [
+     "shipping-policy#drop-orders",
+     "exchanges-and-sizing#exceptions",
+     "shipping-policy-2025#drop-orders",
+     "exchanges-and-sizing#size-exchanges",
+     "fraud-and-reseller-controls#purchase-limits",
+     "drop-club#benefits"
+    ],
+    "kept": [
+     "shipping-policy#drop-orders",
+     "exchanges-and-sizing#exceptions",
+     "shipping-policy-2025#drop-orders",
+     "exchanges-and-sizing#size-exchanges",
+     "fraud-and-reseller-controls#purchase-limits",
+     "drop-club#benefits"
+    ],
+    "id": "p20",
+    "expect": [
+     "shipping-policy#where-we-ship"
+    ],
+    "split": "test",
+    "tag": "superseded"
+   },
+   {
+    "q": "What does PC stand for in PC-12, and when did it start?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 4.35,
+    "cost": 0.0016095,
+    "outcome": "answered",
+    "answer": "In PC-12, \"PC\" stands for **policy change** [2], and it became effective (started) on **2026-04-01** [1], [4].",
+    "queries": [
+     "What does PC stand for in PC-12, and when did it start?"
+    ],
+    "retrieved": [
+     "refund-policy#limited-drops",
+     "glossary#terms",
+     "drop-calendar-h2-2026#rules-for-these-drops",
+     "inc-2047-postmortem#actions",
+     "fraud-and-reseller-controls#overview",
+     "product-care#overview"
+    ],
+    "kept": [
+     "refund-policy#limited-drops",
+     "glossary#terms",
+     "drop-calendar-h2-2026#rules-for-these-drops",
+     "inc-2047-postmortem#actions",
+     "fraud-and-reseller-controls#overview",
+     "product-care#overview"
+    ],
+    "id": "p21",
+    "expect": [
+     "glossary#terms",
+     "refund-policy#limited-drops"
+    ],
+    "split": "test",
+    "tag": "multi-hop"
+   },
+   {
+    "q": "Do Drop Club points stay when a member returns an order?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 3.95,
+    "cost": 0.0011917499999999999,
+    "outcome": "answered",
+    "answer": "No, points do not stay. Points earned on a returned order are removed when the refund is issued [1].",
+    "queries": [
+     "Do Drop Club points stay when a member returns an order?"
+    ],
+    "retrieved": [
+     "drop-club#points-on-returns",
+     "drop-club-tiers#points-expiry",
+     "drop-club#benefits",
+     "drop-club#membership",
+     "drop-club-tiers#gold-tier",
+     "refund-policy-2025#limited-drops"
+    ],
+    "kept": [
+     "drop-club#points-on-returns",
+     "drop-club-tiers#points-expiry",
+     "drop-club#benefits",
+     "drop-club#membership",
+     "drop-club-tiers#gold-tier",
+     "refund-policy-2025#limited-drops"
+    ],
+    "id": "p24",
+    "expect": [
+     "drop-club#points-on-returns"
+    ],
+    "split": "test",
+    "tag": "paraphrase"
+   },
+   {
+    "q": "Does Air Glide run big or small?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 3.41,
+    "cost": 0.0008287500000000001,
+    "outcome": "answered",
+    "answer": "Air Glide runs half a size small [1].",
+    "queries": [
+     "Does Air Glide run big or small?"
+    ],
+    "retrieved": [
+     "exchanges-and-sizing#sizing-advice",
+     "inc-2049-postmortem#overview",
+     "inc-2049-postmortem#what-happened",
+     "inc-2049-postmortem#fixes",
+     "inc-2049-postmortem#impact",
+     "drop-day-runbook#drop-calendar"
+    ],
+    "kept": [
+     "exchanges-and-sizing#sizing-advice",
+     "inc-2049-postmortem#overview",
+     "inc-2049-postmortem#what-happened",
+     "inc-2049-postmortem#fixes",
+     "inc-2049-postmortem#impact",
+     "drop-day-runbook#drop-calendar"
+    ],
+    "id": "n04",
+    "expect": [
+     "exchanges-and-sizing#sizing-advice"
+    ],
+    "split": "test",
+    "tag": "easy"
+   },
+   {
+    "q": "A customer disputed a payment with their bank. Should I also send them a refund?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 5.43,
+    "cost": 0.0017715,
+    "outcome": "answered",
+    "answer": "No, you should not issue a refund. If a customer disputes a payment with their bank, do not issue a second refund [1]. Instead, send the order reference to the Payments team within 2 business days so they can respond to the bank with evidence (including the drop-day order log if it involves a drop order) [1].",
+    "queries": [
+     "A customer disputed a payment with their bank. Should I also send them a refund?"
+    ],
+    "retrieved": [
+     "payments-and-chargebacks#chargebacks",
+     "payments-and-chargebacks#refund-timing",
+     "refund-policy#standard-returns",
+     "refund-policy-2025#standard-returns",
+     "refund-policy-2025#eu-customers",
+     "support-playbook#escalation"
+    ],
+    "kept": [
+     "payments-and-chargebacks#chargebacks",
+     "payments-and-chargebacks#refund-timing",
+     "refund-policy#standard-returns",
+     "refund-policy-2025#standard-returns",
+     "refund-policy-2025#eu-customers",
+     "support-playbook#escalation"
+    ],
+    "id": "n05",
+    "expect": [
+     "payments-and-chargebacks#chargebacks"
+    ],
+    "split": "test",
+    "tag": "paraphrase"
+   },
+   {
+    "q": "How long can a bank take to show a refund after we issue it?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 5.79,
+    "cost": 0.0013695,
+    "outcome": "answered",
+    "answer": "After the refund is issued, the customer's bank can take up to 10 more business days to show it [1].",
+    "queries": [
+     "How long can a bank take to show a refund after we issue it?"
+    ],
+    "retrieved": [
+     "payments-and-chargebacks#refund-timing",
+     "payments-and-chargebacks#chargebacks",
+     "refund-policy#standard-returns",
+     "repairs-and-defects#returns-for-defects",
+     "refund-policy-2025#standard-returns",
+     "refund-policy#exceptions"
+    ],
+    "kept": [
+     "payments-and-chargebacks#refund-timing",
+     "payments-and-chargebacks#chargebacks",
+     "refund-policy#standard-returns",
+     "repairs-and-defects#returns-for-defects",
+     "refund-policy-2025#standard-returns",
+     "refund-policy#exceptions"
+    ],
+    "id": "n06",
+    "expect": [
+     "payments-and-chargebacks#refund-timing"
+    ],
+    "split": "test",
+    "tag": "near-duplicate"
+   },
+   {
+    "q": "What went wrong with the size chart in the April Air Glide order email?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 4.3,
+    "cost": 0.001194,
+    "outcome": "answered",
+    "answer": "In the April Air Glide order email, European sizes were incorrectly displayed under US labels, resulting in 1,900 customers seeing the wrong size chart for 2 hours [1].",
+    "queries": [
+     "What went wrong with the size chart in the April Air Glide order email?"
+    ],
+    "retrieved": [
+     "inc-2049-postmortem#what-happened",
+     "inc-2049-postmortem#overview",
+     "inc-2049-postmortem#fixes",
+     "inc-2049-postmortem#impact",
+     "exchanges-and-sizing#sizing-advice",
+     "inc-2047-postmortem#what-happened"
+    ],
+    "kept": [
+     "inc-2049-postmortem#what-happened",
+     "inc-2049-postmortem#overview",
+     "inc-2049-postmortem#fixes",
+     "inc-2049-postmortem#impact",
+     "exchanges-and-sizing#sizing-advice",
+     "inc-2047-postmortem#what-happened"
+    ],
+    "id": "n13",
+    "expect": [
+     "inc-2049-postmortem#what-happened"
+    ],
+    "split": "test",
+    "tag": "context"
+   },
+   {
+    "q": "If a customer tried the shoes on indoors, can they still return them?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 4.13,
+    "cost": 0.0012517499999999998,
+    "outcome": "answered",
+    "answer": "Yes, a customer can still return them. Trying a pair on indoors to check the fit is fine, as long as they remain unworn otherwise (pairs worn outdoors are refused at the warehouse) [1].",
+    "queries": [
+     "If a customer tried the shoes on indoors, can they still return them?"
+    ],
+    "retrieved": [
+     "product-care#returns",
+     "exchanges-and-sizing#exceptions",
+     "refund-policy#exceptions",
+     "holiday-returns-and-hours#holiday-returns",
+     "exchanges-and-sizing#size-exchanges",
+     "refund-policy#overview"
+    ],
+    "kept": [
+     "product-care#returns",
+     "exchanges-and-sizing#exceptions",
+     "refund-policy#exceptions",
+     "holiday-returns-and-hours#holiday-returns",
+     "exchanges-and-sizing#size-exchanges",
+     "refund-policy#overview"
+    ],
+    "id": "n16",
+    "expect": [
+     "product-care#returns"
+    ],
+    "split": "test",
+    "tag": "paraphrase"
+   },
+   {
+    "q": "How many days do defective items have for a refund under the current policy?",
+    "correct": true,
+    "hallucinated": false,
+    "seconds": 4.51,
+    "cost": 0.0014242500000000002,
+    "outcome": "answered",
+    "answer": "Under the current policy, defective items can be returned for a refund within 90 days of delivery [2, 3].",
+    "queries": [
+     "How many days do defective items have for a refund under the current policy?"
+    ],
+    "retrieved": [
+     "refund-policy-2025#exceptions",
+     "refund-policy#exceptions",
+     "repairs-and-defects#returns-for-defects",
+     "refund-policy-2025#standard-returns",
+     "refund-policy#standard-returns",
+     "refund-policy-2025#limited-drops"
+    ],
+    "kept": [
+     "refund-policy-2025#exceptions",
+     "refund-policy#exceptions",
+     "repairs-and-defects#returns-for-defects",
+     "refund-policy-2025#standard-returns",
+     "refund-policy#standard-returns",
+     "refund-policy-2025#limited-drops"
+    ],
+    "id": "n19",
+    "expect": [
+     "refund-policy#exceptions"
+    ],
+    "split": "test",
+    "tag": "superseded"
+   }
+  ]
+ },
+ "config": {
+  "chat": "google_genai:gemini-3.8-flash",
+  "judge": "deepseek:deepseek-flash",
+  "embed": "google:gemini-embedding-001",
+  "variant": "docctx",
+  "rerank": "ce",
+  "candidates_in": 20,
+  "k_out": 6,
+  "questions": 19
+ }
+}

@@ -1,0 +1,105 @@
+# Episode 2 headroom probe: harder questions over the SAME 10 documents. Draft, written against the documents, not yet run.
+# expect: chunk ids that hold the facts. facts: what a correct answer must say. answerable false = docs do not cover it.
+- q: "A shopper got regular-release shoes 20 days ago and wants to send them back. Is that fine?"
+  expect: [refund-policy#standard-returns]
+  facts: "Yes, within 30 days of delivery if unworn, original box, tags attached."
+  answerable: true
+- q: "Someone in Berlin received a Friday-release pair 10 days ago and wants out. Can they?"
+  expect: [refund-policy#eu-customers, refund-policy#limited-drops]
+  facts: "Yes. EU customers keep the 14-day right of withdrawal even for drops."
+  answerable: true
+  hops: 2
+- q: "After the March reseller wave, how many pairs can one person buy per release?"
+  expect: [inc-2047-postmortem#actions]
+  facts: "One pair per customer per release."
+  answerable: true
+- q: "How long until the money is back after a return is scanned at the warehouse?"
+  expect: [refund-policy#standard-returns]
+  facts: "Within 5 business days, to the original payment method."
+  answerable: true
+- q: "Checkout has been failing for over three minutes at release time. Who gets paged and where do I post?"
+  expect: [drop-day-runbook#during-the-drop]
+  facts: "Page the payments on-call and post in #drop-war-room (error rate above 2% for 3 minutes)."
+  answerable: true
+- q: "How many checkout pods an hour before a release, and how many half an hour after it ends?"
+  expect: [drop-day-runbook#t-60-minutes, drop-day-runbook#after-the-drop]
+  facts: "40 pods at T-60 minutes; back to 8 pods after 30 minutes."
+  answerable: true
+  hops: 2
+- q: "A UK customer's trainers split open after 80 days. The drop window is 7 days. Do we help?"
+  expect: [refund-policy#exceptions]
+  facts: "Yes. Defective items can be returned within 90 days regardless of drop status."
+  answerable: true
+- q: "On what date did bots hammer checkout, and which error code do customers now see when rate limited?"
+  expect: [inc-2051-postmortem#overview, inc-2051-postmortem#what-happened, checkout-errors#e-4029-too-many-attempts]
+  facts: "2026-05-08; E-4029 (too many attempts, 5 per minute)."
+  answerable: true
+  hops: 2
+- q: "How early do loyalty members get in on release day, and what do they get at 500 points?"
+  expect: [drop-club#benefits]
+  facts: "09:50, 10 minutes early; free express delivery for a year at 500 points."
+  answerable: true
+- q: "What does express delivery cost in the UK?"
+  expect: [shipping-policy#delivery-times]
+  facts: "10 GBP (1 to 2 business days)."
+  answerable: true
+- q: "If our on-call engineer ignores a page for 12 minutes, who is paged next?"
+  expect: [on-call#escalation]
+  facts: "After 10 minutes the pager escalates to the team lead, then the head of engineering."
+  answerable: true
+- q: "How many of the 1,180 returned Air Glide pairs came from the 12 reseller accounts?"
+  expect: [inc-2047-postmortem#what-happened]
+  facts: "41% of 1,180, about 484 pairs."
+  answerable: true
+- q: "A customer approved the payment in the banking app but still sees a hold. How long is the pair reserved, and are they charged?"
+  expect: [checkout-errors#e-4012-payment-hold]
+  facts: "The cart is held 10 minutes; they have not been charged until approval."
+  answerable: true
+- q: "Which sneaker release in 2026 was the first one the 7-day return rule applied to?"
+  expect: [refund-policy#limited-drops, drop-day-runbook#drop-calendar]
+  facts: "PC-12 applies to drops on or after 2026-04-01, so the Volt Runner drop on 2026-05-08 was the first."
+  answerable: true
+  hops: 2
+- q: "A US customer's drop pair was delivered on the 20th. On which day does their return window end?"
+  expect: [refund-policy#limited-drops, refund-policy#uk-and-us-customers]
+  facts: "7 days from delivery, so the window ends on the 27th."
+  answerable: true
+  hops: 2
+- q: "What is our refund policy for gift cards?"
+  expect: []
+  facts: "Not covered by the documents."
+  answerable: false
+# AMBIGUOUS (judge flipped between runs, the question itself is unclear): do not count in the headroom set until reworded.
+- q: "Which API limit applies if a partner calls the customer checkout endpoint?"
+  expect: [api-rate-limits#limits]
+  facts: "The customer checkout endpoint is limited separately: 5 attempts per minute per user, not the partner 100 per minute."
+  answerable: true
+- q: "Who do I email about changes to the returns rules?"
+  expect: [refund-policy#overview]
+  facts: "Customer Experience, cx-policy@dropline.example."
+  answerable: true
+- q: "What time does the on-call week change over, and in which time zone?"
+  expect: [on-call#rotation]
+  facts: "Monday at 09:00 CET."
+  answerable: true
+- q: "Can a customer in Canada order a drop pair with express delivery?"
+  expect: [shipping-policy#where-we-ship]
+  facts: "No. We ship only to EU countries, the UK and the US."
+  answerable: true
+- q: "What does PC stand for in PC-12, and when did it start?"
+  expect: [glossary#terms, refund-policy#limited-drops]
+  facts: "Policy change; effective 2026-04-01."
+  answerable: true
+  hops: 2
+- q: "The customer got E-5031 and is worried about being charged twice. What do I say?"
+  expect: [checkout-errors#e-5031-inventory-timeout]
+  facts: "The inventory service timed out; the customer has not been charged; ask them to retry (the page says if the drop sold out)."
+  answerable: true
+- q: "How many pairs were in the first Air Glide drop and how long did they take to sell out?"
+  expect: [inc-2047-postmortem#what-happened, drop-day-runbook#drop-calendar]
+  facts: "5,000 pairs, sold out in 4 minutes."
+  answerable: true
+- q: "Do Drop Club points stay when a member returns an order?"
+  expect: [drop-club#points-on-returns]
+  facts: "No: points earned on the returned order are removed when the refund is issued."
+  answerable: true
